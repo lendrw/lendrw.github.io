@@ -99,6 +99,8 @@ tfoot td, table th {
   background: var(--light-gray-color);
 }
 
+
+
 .intro-content {
   position: relative;
   /* top: -8rem; */
@@ -283,4 +285,5 @@ tfoot td, table th {
   transform: rotate(-90deg);
   border: 0.1rem solid var(--primary-color);
 }
+
 
