@@ -1,3 +1,5 @@
+
+
 :root {
   --primary-color: #36ebbe;
   --secondary-color: crimson;
@@ -286,4 +288,26 @@ tfoot td, table th {
   border: 0.1rem solid var(--primary-color);
 }
 
+.main-bg {
+  background-size: cover;
+  background-position: center center;
+  color: var(--white-color);
+}
 
+.white-bg {
+  background: var(--white-color);
+  color: var(--primary-color);
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.menu-spacing {
+  height: 65px;
+}
+
+body .full-width {
+  width: 100%;
+  flex: 1 1 100%;
+}
