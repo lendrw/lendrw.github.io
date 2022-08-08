@@ -102,7 +102,9 @@ tfoot td, table th {
   background: var(--light-gray-color);
 }
 
-
+nav {
+  padding-right: 4rem;
+}
 
 .intro-content {
   position: relative;

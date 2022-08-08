@@ -20,7 +20,7 @@
     font-size: 2.3rem;
     color: var(--primary-color);
     font-weight: 500;
-    padding-left: 6rem;
+    padding-left: 10rem;
     color: var(--neon-color);
   }
   
@@ -35,7 +35,7 @@
   
   .menu ul li a {
     display: block;
-    padding: 2rem;
+    padding: 2.7rem;
     font-size: 1.6rem;
     color: var(--white);
     position: relative;
@@ -147,5 +147,9 @@
   
     h6 {
       font-size: 2.8rem;
+    }
+
+    nav {
+      padding-left: 4rem;
     }
   }
