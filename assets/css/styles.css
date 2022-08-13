@@ -39,7 +39,8 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
-  padding: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   text-transform: uppercase;
   line-height: 1.2;
 }
@@ -90,7 +91,7 @@ nav {
 .intro-img svg {
   max-width: 100%;
   height: auto;
-  max-height: 21rem;
+  max-height: 24rem;
 }
 
 .top3-content {
