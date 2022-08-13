@@ -21,7 +21,7 @@ function typeWriter() {
         const textArray = el.innerHTML.split('');
         el.innerHTML = '';
         textArray.forEach((letra, i) => {
-            setTimeout(() => el.innerHTML += letra, 200 * i);
+            setTimeout(() => el.innerHTML += letra, 250 * i);
         });
     }
 
