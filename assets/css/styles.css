@@ -83,7 +83,7 @@ nav {
   min-height: 100vh;
 }
 
-.intro-text-content {
+.intro-text-content, .media-buttons {
   margin-left: 5rem;
 }
 
@@ -98,6 +98,18 @@ nav {
   max-width: 100%;
   height: auto;
   max-height: 30rem;
+}
+
+.media-buttons {
+  
+}
+
+.media-buttons img {
+  width: 4rem;
+}
+
+#linkedin {
+  margin-right: 4rem;
 }
 
 .top3-content {
