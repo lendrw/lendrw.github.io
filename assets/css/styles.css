@@ -22,14 +22,14 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   color: var(--primary-color);
   line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 h1 {
@@ -83,6 +83,10 @@ nav {
   min-height: 100vh;
 }
 
+.intro-text-content {
+  margin-left: 5rem;
+}
+
 .intro-text-content, .intro-img {
   display: flex;
   flex-flow: column wrap;
@@ -93,7 +97,7 @@ nav {
 .intro-img svg {
   max-width: 100%;
   height: auto;
-  max-height: 26rem;
+  max-height: 30rem;
 }
 
 .top3-content {
@@ -201,7 +205,7 @@ nav {
 }
 
 .menu-spacing {
-  height: 65px;
+  height: 6.5rem;
 }
 
 body .full-width {
@@ -211,7 +215,7 @@ body .full-width {
 
 .main-content {
   max-width: 120rem;
-  margin: 0 auto;
+  margin: auto;
   padding: 10rem var(--gap);
 }
 
