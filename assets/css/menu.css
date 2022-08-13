@@ -58,7 +58,11 @@
     left: 25%;
   }
 
-  @media (max-width: 880px) {
+  @media (max-width: 800px) {
+    .intro-text-content {
+      text-align: center;
+    }
+
     .intro-content, .grid {
       grid-template-columns: 1fr;
     }

@@ -33,16 +33,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 4.3rem;
+  font-size: 5rem;
   text-transform: uppercase;
+  font-weight: 400;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
   text-transform: uppercase;
   line-height: 1.2;
+  font-weight: 400;
 }
 
 h3 {
@@ -76,7 +78,7 @@ nav {
 .intro-content {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1.5fr;
+  grid-template-columns: 1fr 1fr;
   gap: var(--gap);
   min-height: 100vh;
 }
@@ -91,7 +93,7 @@ nav {
 .intro-img svg {
   max-width: 100%;
   height: auto;
-  max-height: 24rem;
+  max-height: 26rem;
 }
 
 .top3-content {
