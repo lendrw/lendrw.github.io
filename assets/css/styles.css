@@ -83,7 +83,11 @@ nav {
   min-height: 100vh;
 }
 
-.intro-text-content, .media-buttons {
+.intro-text-content {
+  
+}
+
+.intro-text-content {
   margin-left: 5rem;
 }
 
@@ -100,16 +104,36 @@ nav {
   max-height: 30rem;
 }
 
+
+
 .media-buttons {
-  
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+
 }
 
 .media-buttons img {
   width: 4rem;
+  padding-top: 0.5rem;
 }
 
 #linkedin {
   margin-right: 4rem;
+  border: 0.2rem solid #1e43bd;
+}
+
+#github {
+  border: 0.2rem solid #8c00ff;
+}
+
+#linkedin, #github {
+  border-radius: 1rem;
+  width: 5.5rem;
+  height: 5.5rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .top3-content {
