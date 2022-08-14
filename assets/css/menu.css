@@ -59,6 +59,8 @@
   }
 
   @media (max-width: 800px) {
+    
+    
     .intro-text-content {
       text-align: center;
       align-items: center;
@@ -76,6 +78,11 @@
       bottom: 0;
       text-align: center;
       display: none;
+    }
+
+    .intro-img {
+      display: none;
+      width: 0;
     }
 
     .intro-img img {
