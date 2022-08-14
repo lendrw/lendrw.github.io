@@ -91,11 +91,13 @@ nav {
 
 .intro-img img,
 .intro-img svg {
-  max-width: 100%;
+  max-width: 40rem;
   height: auto;
-  max-height: 30rem;
 }
 
+.intro-img {
+  align-items: center;
+}
 
 .media-buttons {
   display: flex;
