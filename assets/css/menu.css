@@ -61,6 +61,7 @@
   @media (max-width: 800px) {
     .intro-text-content {
       text-align: center;
+      margin-left: -5rem;
     }
 
     .intro-content, .grid {
