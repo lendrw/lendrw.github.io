@@ -91,8 +91,8 @@ nav {
 
 .intro-img img,
 .intro-img svg {
-  max-width: 40rem;
-  height: auto;
+  max-width: 100%;
+  width: auto;
 }
 
 .intro-img {
@@ -266,5 +266,106 @@ body .full-width {
   }
   50% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 800px) {
+    
+  .intro-text-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .intro-content {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-one-content {
+    display: block;
+  }
+
+  .menu {
+    bottom: 0;
+    text-align: center;
+    display: none;
+  }
+
+  .intro-img {
+    display: none;
+  }
+
+  .intro-img img {
+    display: none;
+  }
+
+  .menu-content, .menu-content ul {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .menu-content {
+    height: 100vh;
+  }
+
+  .close-menu-label::after {
+    content: '☰';
+    position: fixed;
+    z-index: 2;
+    top: 2rem;
+    right: 2rem;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 3rem;
+    line-height: 3rem;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    
+  }
+
+  .close-menu:checked~.menu {
+    display: block;
+  }
+
+  .close-menu:checked~.close-menu-label::after {
+    content: '×';
+  }
+
+  .menu-spacing {
+    display: none;
+  }
+
+  .menu h1 {
+    padding-left: 0;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 3.4rem;
+  }
+
+  h4 {
+    font-size: 3.2rem;
+  }
+
+  h5 {
+    font-size: 3rem;
+  }
+
+  h6 {
+    font-size: 2.8rem;
+  }
+
+  nav {
+    padding-left: 4rem;
   }
 }
