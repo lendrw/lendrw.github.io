@@ -83,14 +83,6 @@ nav {
   min-height: 100vh;
 }
 
-.intro-text-content {
-  
-}
-
-.intro-text-content {
-  margin-left: 5rem;
-}
-
 .intro-text-content, .intro-img {
   display: flex;
   flex-flow: column wrap;
@@ -105,12 +97,12 @@ nav {
 }
 
 
-
 .media-buttons {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
-
+  width: 15rem;
+  height: 5.5rem;
 }
 
 .media-buttons img {
