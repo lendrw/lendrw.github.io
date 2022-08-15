@@ -251,6 +251,7 @@ body .full-width {
 
 .type-write {
   color: var(--neon-color);
+  white-space: nowrap;
 }
 
 .type-write::after {
