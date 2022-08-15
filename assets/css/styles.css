@@ -272,6 +272,10 @@ body .full-width {
 
 @media (max-width: 800px) {
     
+  .main-content {
+    padding: 0;
+  }
+
   .intro-text-content {
     text-align: center;
     align-items: center;
