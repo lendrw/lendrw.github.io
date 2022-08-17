@@ -1,5 +1,5 @@
 :root {
-  --neon-color: #36ebbe;
+  --neon-color: #12c79a;
   --primary-color: #040811;
   --primary-lighter: #070d1b;
   --secondary-color: #8c00ff;
@@ -257,7 +257,6 @@ body .full-width {
 
 .type-write::after {
   content: '|';
-  margin-left: 0.5rem;
   animation: blink .7s infinite;
   color: var(--gray);
 }
@@ -269,6 +268,47 @@ body .full-width {
   50% {
     opacity: 0;
   }
+}
+
+.sobre-mim {
+  padding: 6rem;
+  padding-left: 11rem;
+  padding-right: 11rem;
+}
+
+.sobre-mim-img {
+  width: 30rem;
+  display: flex;
+  align-items: center;
+}
+
+.sobre-mim-img img {
+  width: 30rem;
+  border-left: 0.5rem solid var(--neon-color);
+}
+
+.sobre-mim-text {
+  padding-top: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.sobre-mim-text h1{
+  font-size: 2.5rem;
+}
+
+.sobre-mim-text h2 {
+  text-transform: capitalize;
+}
+
+.sobre-mim-text h2, .sobre-mim-text p {
+  font-size: 1.6rem;
+  text-align: justify;
+}
+
+.sobre-mim-text p {
+  font-weight: 200;
+  line-height: 2.5rem;
 }
 
 @media (max-width: 800px) {
