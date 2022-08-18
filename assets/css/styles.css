@@ -310,14 +310,21 @@ body .full-width {
   line-height: 2.5rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
 
   .sobre-mim {
     padding: 0;
+    padding-top: 6rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .sobre-mim-img {
     justify-content: center;
+  }
+
+  .sobre-mim-img img {
+    width: 26rem;
   }
 
   .sobre-mim-text h1, .sobre-mim-text h2, .sobre-mim-text p {
