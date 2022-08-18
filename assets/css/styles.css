@@ -277,7 +277,6 @@ body .full-width {
 }
 
 .sobre-mim-img {
-  width: 30rem;
   display: flex;
   align-items: center;
 }
@@ -312,6 +311,18 @@ body .full-width {
 }
 
 @media (max-width: 800px) {
+
+  .sobre-mim {
+    padding: 10rem;
+  }
+
+  .sobre-mim-img {
+    justify-content: center;
+  }
+
+  .sobre-mim-text h1, .sobre-mim-text h2, .sobre-mim-text p {
+    text-align: center;
+  }
     
   .main-content {
     padding: 0;
@@ -337,10 +348,6 @@ body .full-width {
   }
 
   .intro-img {
-    display: none;
-  }
-
-  .intro-img img {
     display: none;
   }
 
