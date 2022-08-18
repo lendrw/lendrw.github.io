@@ -313,7 +313,7 @@ body .full-width {
 @media (max-width: 800px) {
 
   .sobre-mim {
-    
+    padding: 0;
   }
 
   .sobre-mim-img {
