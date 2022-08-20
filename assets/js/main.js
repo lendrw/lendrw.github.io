@@ -28,3 +28,4 @@ function typeWriter() {
     const nameWrite = document.querySelector('.type-write');
     splitName(nameWrite);
 }
+
