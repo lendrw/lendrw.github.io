@@ -1,5 +1,6 @@
 toggleMenu();
 typeWriter();
+animeScroll();
 
 function toggleMenu() {
     const checkBox = document.querySelector('#close-menu');
@@ -29,3 +30,26 @@ function typeWriter() {
     splitName(nameWrite);
 }
 
+
+function animeScroll() {
+
+    const target = document.querySelectorAll('[data-anime]');
+    const animeClass = 'animate';
+
+    function anime() {
+        const windowTop = window.scrollY + (window.innerHeight * 3) / 4;
+        target.forEach((el) =>{
+            if((windowTop) > el.offsetTop) {
+                el.classList.add(animeClass);
+            } else {
+                el.classList.remove(animeClass);
+            }
+        });
+    }
+
+    if(target.length) {
+        window.addEventListener('scroll', () => {
+            anime();
+        });
+    }
+}
