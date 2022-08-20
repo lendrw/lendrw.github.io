@@ -1,6 +1,7 @@
 toggleMenu();
 typeWriter();
 animeScroll();
+scrollSuave();
 
 function toggleMenu() {
     const checkBox = document.querySelector('#close-menu');
@@ -67,4 +68,8 @@ function animeScroll() {
             anime();
         }, 200));
     }
+}
+
+function scrollSuave() {
+
 }
