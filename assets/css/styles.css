@@ -321,7 +321,7 @@ body .full-width {
 
 [data-anime] {
   opacity: 0;
-  transition: .5s;
+  transition: .3s;
 }
 
 [data-anime="left"] {
