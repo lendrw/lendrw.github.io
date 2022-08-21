@@ -130,56 +130,6 @@ nav {
   align-items: center;
 }
 
-.top3-content {
-  max-width: 64rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  min-height: 100vh;
-  text-align: center;
-}
-
-.grid-one-content {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.grid-main-heading {
-  margin-bottom: 1rem;
-}
-
-.grid-description {
-  padding-bottom: 5rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--gap);
-  counter-reset: grid-counter;
-}
-
-.grid h3 {
-  font-size: 3rem;
-  position: relative;
-  padding-left: 5rem;
-  padding-bottom: 2rem;
-}
-
-.grid h3::before {
-  counter-increment: grid-counter;
-  content: counter(grid-counter);
-  position: absolute;
-  font-size: 8rem;
-  font-style: italic;
-  top: -4rem;
-  left: -2rem;
-  transform: rotate(5deg);
-}
-
 .footer {
   text-align: center;
   font-size: 1.6rem;
@@ -333,6 +283,71 @@ body .full-width {
   transform: translate3d(0, 0, 0);
 }
 
+#projetos {
+  padding: 6%;
+  position: relative;
+  z-index: 0;
+}
+
+#projetos h1 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.projetos-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  margin-bottom: 6rem;
+}
+
+.projetos-card {
+  width: 90%;
+  align-items: center;
+}
+
+.projetos-card img {
+  width: 100%;
+}
+
+.projetos-card h2 {
+  text-transform: none;
+  font-size: 2.5rem;
+  margin: 2.5rem 0;
+}
+
+.projetos-card p {
+  font-size: 1.8rem;
+}
+
+.projetos-card span {
+  color: var(--neon-color);
+  font-size: 1.4rem;
+  display: block;
+  margin: 2rem 0;
+}
+
+.projetos-card-button {
+  border: 0.2rem solid var(--neon-color);
+  width: 15rem;
+  border-radius: 0.8rem;
+}
+
+.projetos-card-button img {
+  width: 18px;
+}
+
+.projeto-img {
+  border-left: 5px solid var(--neon-color);
+  width: 100%;
+  transition: 0.5s;
+}
+
+.projeto-img:hover {
+  transform: scale(110%);
+  border-left: 5px solid var(--secondary-color);
+}
+
 @media (max-width: 1115px) {
   .sobre-mim {
     padding-left: 10rem;
@@ -383,10 +398,6 @@ body .full-width {
 
   .intro-content {
     grid-template-columns: 1fr;
-  }
-
-  .grid-one-content {
-    display: block;
   }
 
   .menu {
