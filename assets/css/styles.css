@@ -80,6 +80,15 @@ p {
   margin-inline-end: 0px;
 }
 
+.intro {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    min-height: 60vh;
+    padding: 6.5% 15%;
+}
+
 .intro-content {
   position: relative;
   display: grid;
@@ -100,7 +109,8 @@ p {
 }
 
 .intro-img {
-  align-items: center;
+  width: 70%;
+  margin: 2rem 0;
 }
 
 .media-buttons {
@@ -245,6 +255,7 @@ body .full-width {
   position: relative;
   display: flex;
   justify-content: space-around;
+  z-index: 0;
 }
 
 .sobre-mim-img {
@@ -252,9 +263,9 @@ body .full-width {
 }
 
 .sobre-mim-img img {
+  border-left: 5px solid var(--neon-color);
+  transition: 0.4s;
   width: 70%;
-  border-left: 0.5rem solid var(--neon-color);
-  transition: 0.5s;
 }
 
 .sobre-mim-img img:hover {
@@ -263,7 +274,9 @@ body .full-width {
 }
 
 .sobre-mim-text {
+  line-height: 2.2rem;
   width: 70%;
+  display: block;
 }
 
 .sobre-mim-text h1{
