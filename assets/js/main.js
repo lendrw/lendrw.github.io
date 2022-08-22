@@ -80,7 +80,7 @@ function scrollSuave() {
 
     function scrollToIdOnClick(e) {
         e.preventDefault();
-        const to = getScrollTopByHref(e.target) - 80;
+        const to = getScrollTopByHref(e.target);
 
         scrollToPosition(to);
     }
@@ -108,7 +108,7 @@ function scrollSuave() {
         const distanceY = endY - startY;
         const startTime = new Date().getTime();
     
-        duration = typeof duration !== 'undefined' ? duration : 500;
+        duration = typeof duration !== 'undefined' ? duration : 350;
     
         // Easing function
         const easeInOutQuart = (time, from, distance, duration) => {
