@@ -2,6 +2,7 @@ toggleMenu();
 typeWriter();
 animeScroll();
 scrollSuave();
+experienciaMenu();
 
 function toggleMenu() {
     const checkBox = document.querySelector('#close-menu');
@@ -108,7 +109,7 @@ function scrollSuave() {
         const distanceY = endY - startY;
         const startTime = new Date().getTime();
     
-        duration = typeof duration !== 'undefined' ? duration : 350;
+        duration = typeof duration !== 'undefined' ? duration : 400;
     
         // Easing function
         const easeInOutQuart = (time, from, distance, duration) => {
@@ -126,4 +127,33 @@ function scrollSuave() {
         window.scroll(newX, newY);
         }, 1000 / 60); // 60 fps
     };
+}
+
+function experienciaMenu() {
+    const tabMenu = document.querySelectorAll("[data-tab='menu'] li");
+    const tabContent = document.querySelectorAll("[data-tab='content'] section");
+  
+    if (tabMenu.length && tabContent.length) {
+      tabMenu[1].classList.add("active");
+      tabContent[1].classList.add("active");
+  
+      function activeTab(index) {
+        tabContent.forEach((content) => {
+          content.classList.remove("active");
+        });
+        const direction = tabContent[index].dataset.anime;
+        tabContent[index].classList.add("active", direction);
+  
+        tabMenu.forEach((content) => {
+          content.classList.remove("active");
+        });
+        tabMenu[index].classList.add("active");
+      }
+  
+      tabMenu.forEach((item, index) => {
+        item.addEventListener("click", () => {
+          activeTab(index);
+        });
+      });
+    }
 }

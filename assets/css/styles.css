@@ -80,13 +80,17 @@ p {
   margin-inline-end: 0px;
 }
 
+section {
+  display: block;
+}
+
 .intro {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
-    min-height: 60vh;
-    padding: 6.5% 15%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  min-height: 60vh;
+  padding: 6.5% 15%;
 }
 
 .intro-content {
@@ -97,10 +101,18 @@ p {
   
 }
 
-.intro-text-content, .intro-img {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
+.intro-text-content {
+  width: 50%;
+  margin: 5rem 0;
+}
+
+.intro-text-content h2 {
+  font-size: 2.5rem;
+}
+
+.intro-img {
+  width: 40%;
+  margin: 2rem 0;
 }
 
 .intro-img img,
@@ -155,7 +167,7 @@ p {
 }
 
 .heart {
-  color: var(--secondary-color);
+  color: var(--red);
 }
 
 .footer p {
@@ -305,7 +317,7 @@ body .full-width {
   transform: translate3d(0, -5rem, 0);
 }
 
-[data-anime="left"] {
+[data-anime="right"] {
   transform: translate3d(-5rem, 0, 0);
 }
 
@@ -314,13 +326,14 @@ body .full-width {
   transform: translate3d(0, 0, 0);
 }
 
-#projetos {
-  padding: 6%;
-  position: relative;
+.projetos {
+  padding: 6.5% 15%;
+  min-height: 35vh;
   z-index: 0;
+  position: relative;
 }
 
-#projetos h1 {
+.projetos h1 {
   font-size: 3rem;
   margin-bottom: 3rem;
 }
@@ -329,7 +342,7 @@ body .full-width {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10%;
-  margin-bottom: 6rem;
+  margin-bottom: 5rem;
 }
 
 .projetos-card {
@@ -342,9 +355,7 @@ body .full-width {
 }
 
 .projetos-card h2 {
-  text-transform: none;
-  font-size: 2.5rem;
-  margin: 2.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .projetos-card p {
@@ -355,13 +366,30 @@ body .full-width {
   color: var(--neon-color);
   font-size: 1.4rem;
   display: block;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 .projetos-card-button {
   border: 0.2rem solid var(--neon-color);
-  width: 15rem;
   border-radius: 0.8rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 0.3rem 0.5rem 0.5rem;
+  justify-content: space-evenly;
+  width: 14rem;
+  position: relative;
+  margin-top: 1.5rem;
+  transition: 0.3s;
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+  height: 4.5rem;
+}
+
+.projetos-card-button:hover {
+  background-color: var(--dark-gray);
+  border: 0.2rem solid var(--secondary-color);
 }
 
 .projetos-card-button img {
@@ -369,14 +397,73 @@ body .full-width {
 }
 
 .projeto-img {
-  border-left: 5px solid var(--neon-color);
+  border-left: 0.6rem solid var(--neon-color);
   width: 100%;
   transition: 0.5s;
 }
 
 .projeto-img:hover {
   transform: scale(110%);
-  border-left: 5px solid var(--secondary-color);
+  border-left: 0.6rem solid var(--secondary-color);
+}
+
+.experiencia {
+  padding: 6.5% 15%;
+  min-height: 35vh;
+}
+
+.experiencia h1 {
+  font-size: 3rem;
+}
+
+.experiencia-wrapper {
+  display: flex;
+}
+
+.experiencia-list {
+  width: 20rem;
+  cursor: pointer;
+}
+
+.experiencia-list ul {
+  list-style: none;
+  font-size: 1.5rem;
+  padding: 0;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.experiencia-list ul li {
+  padding: 1rem;
+  text-align: center;
+  border-left: 2px solid var(--gray);
+  transition: background-color 0.5s ease;
+}
+
+.experiencia-list ul li.active {
+  background-color: var(--dark-gray);
+  border-left: 2px solid var(--neon-color);
+  font-weight: 600;
+}
+
+.experiencia-desc {
+  width: 60%;
+  margin-left: 5rem;
+  position: relative;
+  line-height: 1.8rem;
+  font-size: 1.6rem;
+}
+
+.experiencia-desc section {
+  display: none;
+}
+
+.experiencia-desc section.active {
+  display: block;
 }
 
 @media (max-width: 880px) {
@@ -498,7 +585,4 @@ body .full-width {
     font-size: 2.8rem;
   }
 
-  nav {
-    padding-left: 4rem;
-  }
 }
