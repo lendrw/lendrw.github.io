@@ -1,13 +1,13 @@
 :root {
-  --neon-color: #12c79a;
+  --neon-color: #01e4ab;
   --primary-color: #040811;
   --primary-lighter: #070d1b;
   --secondary-color: #8c00ff;
-  --white: #ffffff;
+  --white: #f3f3f3;
   --dark-gray: #202020;
   --gray: #bbbbbb;
   --red: rgb(255, 35, 64);
-  --blue: #0077e6;
+  --pink: #eb4894;
   --gap: 3rem;
 }
 
@@ -323,7 +323,7 @@ body .full-width {
     padding: 3px 5px 5px;
     justify-content: space-evenly;
     width: 140px;
-    border: 0.2rem solid var(--blue);
+    border: 0.2rem solid var(--pink);
     border-radius: 8px;
     position: relative;
     margin-top: 1rem;
