@@ -8,6 +8,7 @@
   --gray: #bbbbbb;
   --red: rgb(255, 35, 64);
   --pink: #eb4894;
+  --blue: #0a142b;
   --gap: 3rem;
 }
 
@@ -262,6 +263,17 @@ body .full-width {
   }
 }
 
+@keyframes show-right {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .sobre-mim {
   padding: 6.5% 15%;
   min-height: 35vh;
@@ -356,6 +368,10 @@ body .full-width {
   transform: translate3d(0, 0, 0);
 }
 
+[data-anime].active {
+  animation: 0.5s forwards show-right;
+}
+
 .projetos {
   padding: 6.5% 15%;
   min-height: 35vh;
@@ -437,25 +453,26 @@ body .full-width {
   border-left: 0.6rem solid var(--secondary-color);
 }
 
-.experiencia {
+.formacao {
   padding: 6.5% 15%;
   min-height: 35vh;
 }
 
-.experiencia h1 {
-  font-size: 3rem;
+.formacao h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
 }
 
-.experiencia-wrapper {
+.formacao-wrapper {
   display: flex;
 }
 
-.experiencia-list {
-  width: 20rem;
+.formacao-list {
+  width: 22rem;
   cursor: pointer;
 }
 
-.experiencia-list ul {
+.formacao-list ul {
   list-style: none;
   font-size: 1.5rem;
   padding: 0;
@@ -464,23 +481,25 @@ body .full-width {
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
-  padding-inline-start: 40px;
 }
 
-.experiencia-list ul li {
+.formacao-list ul li {
   padding: 1rem;
   text-align: center;
-  border-left: 2px solid var(--gray);
-  transition: background-color 0.5s ease;
+  border-left: 2px solid var(--dark-gray);
+  transition: background-color 0.7s ease;
 }
 
-.experiencia-list ul li.active {
-  background-color: var(--dark-gray);
+.formacao-list ul li.active {
   border-left: 2px solid var(--neon-color);
   font-weight: 600;
 }
 
-.experiencia-desc {
+.formacao-list ul li:hover {
+  background-color: var(--blue);
+}
+
+.formacao-desc {
   width: 60%;
   margin-left: 5rem;
   position: relative;
@@ -488,12 +507,24 @@ body .full-width {
   font-size: 1.6rem;
 }
 
-.experiencia-desc section {
+.formacao-desc section {
   display: none;
 }
 
-.experiencia-desc section.active {
+.formacao-desc section.active {
   display: block;
+}
+
+.formacao-desc h2 {
+  padding: 0;
+}
+
+.formacao-desc p {
+  margin: 3rem 0;
+}
+
+.formacao-desc-local {
+  color: var(--neon-color);
 }
 
 @media (max-width: 880px) {
