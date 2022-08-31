@@ -81,7 +81,7 @@ function scrollSuave() {
 
     function scrollToIdOnClick(e) {
         e.preventDefault();
-        const to = getScrollTopByHref(e.target);
+        const to = getScrollTopByHref(e.target) - 80;
 
         scrollToPosition(to);
     }
