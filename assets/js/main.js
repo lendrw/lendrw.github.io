@@ -74,6 +74,9 @@ function animeScroll() {
 function scrollSuave() {
 
     const menuItems = document.querySelectorAll('#menu-elements a[href^="#"]');
+    const backToTop = document.querySelector('#back-to-top');
+
+    backToTop.addEventListener('click', scrollToIdOnClick);
     
     menuItems.forEach(item => {
         item.addEventListener('click', scrollToIdOnClick);
