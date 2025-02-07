@@ -1,85 +1,83 @@
-
-
-.toggle_checkbox {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.toggle_slot {
-  position: relative;
-  height: 2.5em;
-  width: 5em;
-  border: 3px solid #e4e7ec;
-  border-radius: 10em;
-  background-color: white;
-  box-shadow: 0px 0px 20px #e4e7ec;
-  transition: background-color 250ms ease-in-out;
-}
-
-.toggle_checkbox:checked ~ .toggle_slot {
-  background-color: #374151;
-}
-
-.toggle_button {
-  transform: translate(2.9em, .4em);
-  position: absolute;
-  height: 1.6em;
-  width: 1.6em;
-  border-radius: 50%;
-  background-color: #ffeccf;
-  box-shadow: inset 0px 0px 0px 0.2em #ffbb52;
-  transition: background-color 250ms, box-shadow 250ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
-}
-
-.toggle_checkbox:checked ~ .toggle_slot .toggle_button {
-  background-color: #485367;
-  box-shadow: inset 0px 0px 0px 0.2em white;
-  transform: translate(.4em, .4em);
-}
-
-.sun_icon {
-  position: absolute;
-  height: 1.5em;
-  width: 1.5em;
-  color: #ffbb52;
-}
-
-.sun_icon_wrapper {
-  position: absolute;
-  height: 1.5em;
-  width: 1.5em;
-  opacity: 1;
-  transform: translate(.5em, .5em) rotate(15deg);
-  transform-origin: 50% 50%;
-  transition: opacity 150ms ease-in-out, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
-}
-
-.toggle_checkbox:checked ~ .toggle_slot .sun_icon_wrapper {
-  opacity: 0;
-  transform: translate(.75em, .5em) rotate(0deg);
-}
-
-.moon_icon {
-  position: absolute;
-  height: 1.5em;
-  width: 1.5em;
-  color: white;
-}
-
-.moon_icon_wrapper {
-  position: absolute;
-  height: 1.5em;
-  width: 1.5em;
-  opacity: 0;
-  transform: translate(2.75em, .5em) rotate(0deg);
-  transform-origin: 50% 50%;
-  transition: opacity 150ms ease-in-out, transform 500ms cubic-bezier(0.26, 2.5, 0.46, 0.71);
-}
-
-.toggle_checkbox:checked ~ .toggle_slot .moon_icon_wrapper {
-  opacity: 1;
-  transform: translate(3em, .5em) rotate(-15deg);
-}
+  .toggle_checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .toggle_slot {
+    position: relative;
+    height: 2.5em;
+    width: 5em;
+    border: 3px solid var(--cold-grey);
+    border-radius: 10em;
+    background-color: var(--sky-blue);
+    box-shadow: 0px 0px 20px var(--light-yellow);
+    transition: background-color 250ms ease-in-out;
+  }
+  
+  .toggle_checkbox:checked ~ .toggle_slot {
+    background-color: var(--color-background-dark);
+  }
+  
+  .toggle_button {
+    transform: translate(2.9em, 0.4em);
+    position: absolute;
+    height: 1.6em;
+    width: 1.6em;
+    border-radius: 50%;
+    background-color: var(--light-yellow);
+    box-shadow: inset 0px 0px 0px 0.2em var(--color-icon-sun);
+    transition: background-color 250ms, box-shadow 250ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+  }
+  
+  .toggle_checkbox:checked ~ .toggle_slot .toggle_button {
+    background-color: var(--color-button-dark);
+    box-shadow: inset 0px 0px 0px 0.2em var(--white);
+    transform: translate(0.4em, 0.4em);
+  }
+  
+  .sun_icon {
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    color: var(--color-icon-sun);
+  }
+  
+  .sun_icon_wrapper {
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    opacity: 1;
+    transform: translate(0.5em, 0.5em) rotate(15deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms ease-in-out, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+  }
+  
+  .toggle_checkbox:checked ~ .toggle_slot .sun_icon_wrapper {
+    opacity: 0;
+    transform: translate(0.75em, 0.5em) rotate(0deg);
+  }
+  
+  .moon_icon {
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    color: var(--white);
+  }
+  
+  .moon_icon_wrapper {
+    position: absolute;
+    height: 1.5em;
+    width: 1.5em;
+    opacity: 0;
+    transform: translate(2.75em, 0.5em) rotate(0deg);
+    transform-origin: 50% 50%;
+    transition: opacity 150ms ease-in-out, transform 500ms cubic-bezier(0.26, 2.5, 0.46, 0.71);
+  }
+  
+  .toggle_checkbox:checked ~ .toggle_slot .moon_icon_wrapper {
+    opacity: 1;
+    transform: translate(3em, 0.5em) rotate(-15deg);
+  }

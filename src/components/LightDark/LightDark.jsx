@@ -5,7 +5,7 @@ import moonIcon from '@iconify-icons/feather/moon';
 
 const LightDark = () => {
   return (
-    <label className={styles.light_dark}>
+    <label>
       <input type="checkbox" className={styles.toggle_checkbox} />
       <div className={styles.toggle_slot}>
         <div className={styles.sun_icon_wrapper}>

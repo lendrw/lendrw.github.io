@@ -1,0 +1,14 @@
+:root {
+  --cold-grey: #e4e7ec;
+  --white: white;
+  --color-background-dark: #00014d;
+  --light-yellow: #ffc56e;
+  --color-button-dark: #1a1b69;
+  --color-icon-sun: #ffb340;
+  --sky-blue: #5db0ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
