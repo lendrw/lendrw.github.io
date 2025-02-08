@@ -5,10 +5,25 @@
   --light-yellow: #ffc56e;
   --color-button-dark: #1a1b69;
   --color-icon-sun: #ffb340;
-  --sky-blue: #5db0ff;
+  --sky-blue: #0aace3;
+  --day-golden: #f9e359;
+  --day-deep-orange: #c54b29;
+  --day-deep-blue: #223875;
+  --day-grey: #bfc0bd;
+
+  --night-purple: #5f3387;
+  --night-deep-purple: #352c6e;
+  --night-mid-purple: #5c3682;
+  --night-lavender: #7f8ebf;
+  --night-light-lavender: #9faeb3;
+  --night-magenta: #e8458d;
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+.container {
+  min-height: 100vh;
 }
