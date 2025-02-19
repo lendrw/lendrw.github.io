@@ -2,7 +2,7 @@
   --cold-grey: #e4e7ec;
   --white: white;
   --color-background-dark: #00014d;
-  --light-yellow: #ffc56e;
+  --light-yellow: #ffdca8;
   --color-button-dark: #1a1b69;
   --color-icon-sun: #ffb340;
   --sky-blue: #0aace3;
@@ -10,20 +10,31 @@
   --day-deep-orange: #c54b29;
   --day-deep-blue: #223875;
   --day-grey: #bfc0bd;
+  --moon: rgb(214, 214, 214);
 
+  --background-color: rgb(255, 255, 255);
+  --background-color-transparent: rgba(255, 255, 255, 0.4);
+
+  --nav-height: 4vh;
+}
+
+.dark-mode {
   --night-purple: #5f3387;
-  --night-deep-purple: #352c6e;
+  --night-deep-purple: rgb(53, 44, 110);
   --night-mid-purple: #5c3682;
   --night-lavender: #7f8ebf;
   --night-light-lavender: #9faeb3;
   --night-magenta: #e8458d;
+
+  --background-color: rgb(22, 15, 68);
+  --background-color-transparent: rgba(53, 44, 110, 0.5);
 }
 
 body {
   margin: 0;
-  padding: 0;
 }
 
 .container {
-  min-height: 100vh;
+  height: 100vh;
+  background-color: var(--background-color);
 }
