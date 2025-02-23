@@ -7,6 +7,7 @@ const Home = () => {
       className={`container ${styles.home}`} 
       style={{ 
         backgroundImage: `url(${backGround})`}}
+      id='home'
     >
       home
     </div>

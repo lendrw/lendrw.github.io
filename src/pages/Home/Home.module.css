@@ -1,14 +1,14 @@
 .home {
-    position: relative; /* Necessário para posicionar o pseudo-elemento */
-    background-image: url('caminho/para/sua/imagem.jpg'); /* Imagem de fundo */
+    position: relative;
+    background-image: url('caminho/para/sua/imagem.jpg'); 
     background-position: center;
-    background-size: cover; /* Cobrir todo o espaço */
-    background-repeat: no-repeat; /* Evitar repetição */
+    background-size: cover;
+    background-repeat: no-repeat; 
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; /* Cor do texto */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra no texto */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   .home::before {
