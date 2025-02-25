@@ -1,14 +1,11 @@
 .home {
-    position: relative;
-    background-image: url('caminho/para/sua/imagem.jpg'); 
+    position: relative; 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat; 
     display: flex;
-    align-items: center;
     justify-content: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    align-items: center;
   }
   
   .home::before {
@@ -25,4 +22,85 @@
   .home > * {
     position: relative;
     z-index: 2; 
+  }
+
+  .homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--transparent-container-color);
+    border-radius: 40px;
+    width: 30em;
+    height: 22em;
+  }
+
+  .wave {
+    display: inline-block;
+    animation: wave-animation 2s infinite ease-in-out;
+    font-size: 25px;
+  }
+
+  .typing {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid var(--font-color); /* Cursor piscando */
+    animation: typing 3s steps(22, end) forwards, blink 0.8s infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 85%; }
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  @keyframes wave-animation {
+      0% { transform: rotate(-10deg); }
+      25% { transform: rotate(30deg); }
+      50% { transform: rotate(-10deg); }
+      75% { transform: rotate(30deg); }
+      100% { transform: rotate(-10deg); }
+  }
+
+  .icon {
+    font-size: 25px;
+    color: white;
+    transition: transform 0.2s ease-in-out, color 0.3s;
+  }
+
+  .medias {
+    gap: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3em;
+  }
+
+  .trace {
+    background-color: var(--font-color);
+    height: .15em;
+    width: 2.5em;
+  }
+
+  .home h1, .home h2, .icon {
+    color: var(--font-color);
+  }
+
+  .home h1, .home h2, .medias {
+    margin-top: .4em;
+    margin-bottom: .4em;
+  }
+
+  .home h2 {
+    font-weight: 100;
+    font-size: 20px;
+  }
+
+  .icon:hover {
+      transform: scale(1.2);
+      color: var(--hover);
   }

@@ -33,8 +33,8 @@ const LightDark = () => {
         <div className={styles.toggle_button}></div>
         {isDarkMode && (
           <div className={styles.stars}>
-          {Array.from({ length: 100 }).map((_, index) => {
-            const size = Math.random() * 1 + 0.5;
+          {Array.from({ length: 80 }).map((_, index) => {
+            const size = Math.random() * 0.8 + 0.5;
             const top = Math.random() * 100;
             const left = Math.random() * 100;
             const delay = Math.random() * 10;
