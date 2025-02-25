@@ -18,7 +18,7 @@ const StarrySky = () => {
     const crossStars = [];
     const crossAuxStars = [];
 
-    for (let i = 0; i < 40; i++) {
+    for (let i = 0; i < 45; i++) {
 
       newStars.push({
         className: 'star star-0 blink',
@@ -54,7 +54,7 @@ const StarrySky = () => {
 
     }
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 35; i++) {
 
       newStars.push({
         className: 'star star-0 blink',
@@ -83,7 +83,7 @@ const StarrySky = () => {
 
     }
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 25; i++) {
 
       newStars.push({
         className: 'star star-0',
@@ -104,7 +104,7 @@ const StarrySky = () => {
 
     }
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 20; i++) {
 
       newStars.push({
         className: 'star star-5 blink',
