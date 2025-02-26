@@ -26,6 +26,7 @@ html {
 
   --background-color: rgb(255, 255, 255);
   --background-color-transparent: rgba(255, 255, 255, 0.596);
+  --background-color-dark-transparent: rgba(165, 165, 165, 0.5);
   --navbar-color: white;
   --navbar-font-color: rgb(0, 0, 0);
   --font-color: rgb(0, 0, 0);
@@ -47,6 +48,7 @@ html {
 
   --background-color: rgba(22, 15, 68, 0);
   --background-color-transparent: rgba(53, 44, 110, 0.5);
+  --background-color-dark-transparent: rgba(25, 16, 82, 0.5);
   --navbar-color: rgb(22, 15, 68);
   --navbar-font-color: #56ffff;
   --font-color: white;
@@ -62,7 +64,7 @@ body {
 }
 
 .container {
-  height: calc(100vh - var(--nav-height));
+  min-height: calc(100vh - var(--nav-height));
   background-color: var(--background-color);
   scroll-margin-top: var(--nav-height);
 }
