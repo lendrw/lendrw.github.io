@@ -1,11 +1,10 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
-const AnimatedSection = ({ id, children }) => {
+const AnimatedSection = ({ id, children, className }) => {
   const controls = useAnimation();
 
   useEffect(() => {
-    // Inicializa a animação
     controls.start({ opacity: 1, x: 0 });
 
     const handleScroll = () => {
@@ -27,7 +26,7 @@ const AnimatedSection = ({ id, children }) => {
   }, [controls, id]);
 
   return (
-    <div id={id}>
+    <div id={id} className={className}>
       <motion.div
         initial={{ opacity: 0, x: -100 }}
         animate={controls}

@@ -1,0 +1,66 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.skills h1 {
+  text-align: center;
+  color: var(--font-color);
+}
+
+.animatedSection > div {
+  display: flex;
+  justify-content: center;
+}
+
+.skillContainer {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 70% 70%;
+  justify-content: center;
+  width: 80%;
+  align-self: center;
+  }
+
+  .skillContainer div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .skillContainer div div:hover {
+    transform: scale(1.2);
+    color: var(--hover);
+  }
+
+  .skillContainer div div:hover p,
+.skillContainer div div:hover .skillIcons {
+  color: var(--hover); 
+}
+
+  .skillContainer div div {
+    background-color: var(--background-color-dark-transparent);
+    border-bottom: 3px solid var(--hover);
+    border-top-left-radius: 30px;
+    height: 10em;
+    width: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease-in-out, color 0.3s;
+  }
+
+  .skillContainer p {
+    color: var(--font-color);
+    margin: 0;
+    margin-top: 10px;
+  }
+  
+  .skillIcons {
+        font-size: 50px;
+        color: var(--font-color);
+    }
+
+    
