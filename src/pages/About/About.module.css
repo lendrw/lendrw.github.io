@@ -1,0 +1,24 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .about h1 {
+    color: var(--font-color);
+  }
+  
+  .animatedSection > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .animatedSection > div p {
+    font-size: 18px;
+    color: var(--font-color);
+    width: 60%;
+  }
+  
