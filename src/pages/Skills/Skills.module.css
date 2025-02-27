@@ -39,6 +39,10 @@
   color: var(--hover); 
 }
 
+.skillContainer div div p {
+  transition: transform 0.2s ease-in-out, color 0.3s;
+}
+
   .skillContainer div div {
     background-color: var(--background-color-dark-transparent);
     border-bottom: 3px solid var(--hover);
