@@ -34,6 +34,11 @@ html {
   --transparent-container-color: rgba(255, 255, 255, 0.5);
   --scrollbar-track: white;
   --scrollbar-thumb: #ff9900;
+  --button-hover-color: white;
+  --button-hover-background-color: white;
+  --button-hover-border-color: #ff9900;
+  --contact-icon-color: white;
+  --contact-link-color: rgba(0, 162, 255, 0.2);
 
   --nav-height: 8vh;
 }
@@ -56,6 +61,10 @@ html {
   --transparent-container-color: rgba(22, 15, 68, 0.5);
   --scrollbar-track: rgb(22, 15, 68);
   --scrollbar-thumb: #ff7ab6;
+  --button-hover-color: rgb(0, 0, 0);
+  --button-hover-border-color: #56ffff;
+  --contact-icon-color: rgb(22, 15, 68);
+  --contact-link-color: rgba(255, 122, 182, 0.2);
 }
 
 body {
@@ -63,8 +72,14 @@ body {
   font-family: var(--main-font);
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   min-height: calc(100vh - var(--nav-height));
+  height: auto;
   background-color: var(--background-color);
   scroll-margin-top: var(--nav-height);
 }

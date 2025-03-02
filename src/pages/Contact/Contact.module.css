@@ -1,0 +1,62 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact h1 {
+    margin-bottom: 1.5em;
+}
+
+.animatedSection {
+    width: 100%;
+    height: 25em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animatedSection > div {
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contatoContainer {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 12em 12em;
+}
+
+.contatoContainer a div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactIcons {
+    font-size: 40px;
+    color: var(--contact-icon-color);
+}
+
+.iconBg {
+    width: 4em;
+    height: 4em;
+    border-radius: 40px;
+    background-color: var(--font-color);
+}
+
+.contactLink {
+    transition: all .3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactLink:hover {
+    transform: scale(1.1);
+    background-color: var(--contact-link-color);
+    border-radius: 20px;
+}
