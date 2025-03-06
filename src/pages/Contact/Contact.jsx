@@ -10,7 +10,7 @@ const Contact = () => {
       <h1>Contatos</h1>
       <AnimatedSection id='contatos' className={styles.animatedSection}>
         <div className={styles.contatoContainer}>
-          <a href="" className={styles.contactLink}>
+          <a href="mailto:leandrocabral321@gmail.com" className={styles.contactLink}>
             <div>
               <div className={styles.iconBg}>
                 <FaEnvelope className={styles.contactIcons}/>

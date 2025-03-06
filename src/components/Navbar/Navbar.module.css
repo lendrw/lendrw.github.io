@@ -101,16 +101,19 @@
       height: 100vh;
       background-color: var(--navbar-color);
       clip-path: circle(100px at 90% -15%);
-      transition: .9s ease-out;
+      transition: .7s ease-out;
       flex-direction: column;
-      justify-content: space-around;
       align-items: center;
       gap: 0;
       pointer-events: none;
     }
 
+    .navList li {
+      margin-top: 10vh;
+    }
+
     .navList li a {
-      font-size: 20px;
+      font-size: 18px;
       opacity: 0;
     }
 
