@@ -7,6 +7,28 @@ const LightDark = () => {
            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
   });
 
+  const checkAutoDarkMode = () => {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    const isNight =
+      (hours > 17 || (hours === 17 && minutes >= 30)) || 
+      (hours < 5 || (hours === 5 && minutes <= 30));     
+
+    setIsDarkMode(isNight);
+  };
+
+  useEffect(() => {
+    checkAutoDarkMode();
+
+    const interval = setInterval(() => {
+      checkAutoDarkMode();
+    }, 5 * 60 * 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark-mode');

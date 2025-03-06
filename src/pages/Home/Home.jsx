@@ -21,7 +21,7 @@ const Home = () => {
             <a href="https://github.com/lendrw" target="_blank" rel="noopener noreferrer">
               <FaGithub className={styles.icon}/>
             </a>
-            <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/leandro-cabral-2aab41205/" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className={styles.icon}/>
             </a>
             <a href="mailto:leandrocabral321@gmail.com">

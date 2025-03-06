@@ -80,7 +80,7 @@ a {
 }
 
 .container {
-  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100dvh - var(--nav-height));
   background-color: var(--background-color);
   scroll-margin-top: var(--nav-height);
 }
