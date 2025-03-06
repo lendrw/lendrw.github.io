@@ -18,10 +18,10 @@ const Projects = () => {
           <p>Jogo de palavras</p>
           <span>Tecnologias utilizadas no projeto: HTML, CSS, JavaScript, React + Vite.</span>
           <div className={styles.linkButton}>
-          <a href="https://lendrw.github.io/secret_word">
-            <FaLink/>
-            Visualizar
-          </a>
+            <a href="https://lendrw.github.io/secret_word">
+              <FaLink/>
+              Visualizar
+            </a>
           </div>
         </div>
         <div className={styles.projectCard}>
@@ -32,8 +32,10 @@ const Projects = () => {
           <p>Jogo de palavras</p>
           <span>Tecnologias utilizadas no projeto: HTML, CSS, JavaScript, React + Vite.</span>
           <div className={styles.linkButton}>
-            <FaLink/>
-            Visualizar
+            <a href="https://lendrw.github.io/secret_word">
+              <FaLink/>
+              Visualizar
+            </a>
           </div>
         </div>
         <div className={styles.projectCard}>
@@ -44,8 +46,10 @@ const Projects = () => {
           <p>Jogo de palavras</p>
           <span>Tecnologias utilizadas no projeto: HTML, CSS, JavaScript, React + Vite.</span>
           <div className={styles.linkButton}>
-            <FaLink/>
-            Visualizar
+            <a href="https://lendrw.github.io/secret_word">
+              <FaLink/>
+              Visualizar
+            </a>
           </div>
         </div>
         <div className={styles.projectCard}>
@@ -56,8 +60,10 @@ const Projects = () => {
           <p>Jogo de palavras</p>
           <span>Tecnologias utilizadas no projeto: HTML, CSS, JavaScript, React + Vite.</span>
           <div className={styles.linkButton}>
-            <FaLink/>
-            Visualizar
+            <a href="https://lendrw.github.io/secret_word">
+              <FaLink/>
+              Visualizar
+            </a>
           </div>
         </div>
       </AnimatedSection>

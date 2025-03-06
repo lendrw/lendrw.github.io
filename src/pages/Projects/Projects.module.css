@@ -6,7 +6,7 @@
 }
 
 .projects img {
-  width: 100%;
+  width: calc(100% - 5px);
   border-left: 5px solid var(--button-hover-border-color);
   transition: transform 0.3s ease-in-out;
 }
@@ -65,4 +65,43 @@ h1, h2, p {
     transform: scale(1.1);
     background-color: var(--font-color);
     color: var(--button-hover-color);
+  }
+
+  @media (max-width: 780px) {
+    .animatedSection > div {
+      grid-template-columns: 100%;
+      grid-template-rows: 31em 31em 31em 31em;
+      gap: 2em;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .animatedSection > div {
+      grid-template-rows: 28em 28em 28em 28em;
+    }
+
+    .linkButton {
+      width: 8em;
+      height: 2em;
+    }
+
+    .linkButton a {
+      font-size: 14px;
+    }
+
+    .projectCard h2 {
+      font-size: 21px;
+    }
+
+    .projectCard p, .projectCard span {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .animatedSection > div {
+      grid-template-rows: 25em 25em 25em 25em;
+      gap: 2em;
+      width: 90%;
+    }
   }

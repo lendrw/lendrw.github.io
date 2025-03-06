@@ -140,3 +140,10 @@
     }
   }
   
+  @media (max-width: 1070px) {
+    .toggle_slot {
+      border: 2px solid var(--cold-grey);
+    }
+
+    
+  }

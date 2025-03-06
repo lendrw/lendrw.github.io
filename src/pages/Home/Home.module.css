@@ -24,6 +24,10 @@
     z-index: 2; 
   }
 
+  .home h1 {
+    text-align: center;
+  }
+
   .homeContainer {
     display: flex;
     flex-direction: column;
@@ -43,10 +47,11 @@
 
   .typing {
     width: 0;
+    max-width: 20ch;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 4px solid var(--font-color); /* Cursor piscando */
-    animation: typing 3s steps(22, end) forwards, blink 0.8s infinite;
+    border-right: 4px solid var(--font-color); 
+    animation: typing 3s steps(20, end) forwards, blink 0.8s infinite;
   }
   
   @keyframes typing {
@@ -103,4 +108,36 @@
   .icon:hover {
       transform: scale(1.2);
       color: var(--hover);
+  }
+
+  @media (max-width: 780px) {
+    .homeContainer {
+      width: 70vw;
+    }
+  }
+
+  @media (max-width: 690px) {
+    .homeContainer {
+      width: 80vw;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .homeContainer {
+      width: 95vw;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .homeContainer h1 {
+      font-size: 23px;
+    }
+
+    .homeContainer h2 {
+      font-size: 17px;
+    }
+
+    .wave {
+      font-size: 20px;
+    }
   }

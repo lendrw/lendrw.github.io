@@ -20,5 +20,12 @@
     font-size: 18px;
     color: var(--font-color);
     width: 60%;
+    text-align: justify;
   }
   
+  @media (max-width: 780px) {
+    .animatedSection > div p {
+      font-size: 16px;
+      width: 80%;
+    }
+  }

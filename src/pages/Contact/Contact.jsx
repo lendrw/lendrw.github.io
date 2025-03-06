@@ -19,7 +19,7 @@ const Contact = () => {
               <span>leandrocabral321@gmail.com</span>
             </div>
           </a>
-          <a href="" className={styles.contactLink}>
+          <a href="tel:+5584999917798" className={styles.contactLink}>
             <div>
               <div className={styles.iconBg}>
                 <FaPhone className={styles.contactIcons}/>
@@ -28,7 +28,7 @@ const Contact = () => {
               <span>(84)9 9991-7798</span>
             </div>
           </a>
-          <a href="" className={styles.contactLink}>
+          <a href="https://www.linkedin.com/in/leandro-cabral-2aab41205/" className={styles.contactLink}>
             <div>
               <div className={styles.iconBg}>
                 <FaLinkedin className={styles.contactIcons}/>
@@ -37,7 +37,7 @@ const Contact = () => {
               <span>@leandrocabral</span>
             </div>
           </a>
-          <a href="" className={styles.contactLink}>
+          <a href="https://github.com/lendrw" className={styles.contactLink}>
             <div>
               <div className={styles.iconBg}>
                 <FaGithub className={styles.contactIcons}/>

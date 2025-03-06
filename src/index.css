@@ -264,3 +264,9 @@ a {
   width: 5px;
   height: 10px;
 }
+
+@media (max-width: 500px) {
+  .title {
+    color: red;
+  }
+}

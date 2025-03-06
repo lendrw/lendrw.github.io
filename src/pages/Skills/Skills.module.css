@@ -7,6 +7,8 @@
 .skills h1 {
   text-align: center;
   color: var(--font-color);
+  word-break: break-word;
+  padding-inline: 30px;
 }
 
 .animatedSection > div {
@@ -67,4 +69,52 @@
         color: var(--font-color);
     }
 
-    
+    @media (max-width: 880px) {
+      .skillContainer {
+        width: 90%;
+        }
+    }
+
+    @media (max-width: 780px) {
+      .skillContainer {
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        grid-template-rows: 33.3% 33.3% 33.3%;
+        width: 80%;
+        }
+
+        .skillContainer div div {
+          margin-bottom: 10%;
+        }
+    }
+
+    @media (max-width: 670px) {
+      .skillContainer {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 25% 25% 25% 25%;
+        width: 80%;
+        }
+
+        .skillContainer div div {
+          margin-bottom: 20%;
+        }
+    }
+
+    @media (max-width: 500px) {
+      .skillContainer {
+        width: 100%;
+        }
+
+        .skillContainer div div {
+          margin-bottom: 10%;
+          width: 8em;
+          height: 8em;
+        }
+
+        .skillContainer div div p {
+          font-size: 13px;
+        }
+
+        .skillIcons {
+          font-size: 45px;
+      }
+    }

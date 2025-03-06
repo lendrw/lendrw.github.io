@@ -8,7 +8,7 @@
     position: fixed;
     top: 0;
     z-index: 1000;
-    width: 100%;
+    width: 100vw;
     color: var(--navbar-font-color);
     border-bottom: 2px solid var(--hover);
   }
@@ -23,6 +23,7 @@
     font-size: 1.5rem;
     margin-left: 1.5rem;
     font-weight: bold;
+    color: var(--navbar-font-color);
   }
   
   .navbar ul {
@@ -40,8 +41,9 @@
     transition: color 0.3s ease;
   }
   
-  .navbar ul li:hover, span {
-    color: var(--hover); 
+  .navbar ul li:hover,
+  span {
+    color: var(--hover) !important;
   }
 
   .navbar ul li:hover {
@@ -49,4 +51,125 @@
     text-shadow: 0px 0px 8px var(--hover);
   }
   
+  .navSwitch {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-top: 3px solid var(--navbar-font-color);
+    width: 30px;
+    margin-left: auto;
+    margin-right: 1.5rem;
+  }
+
+  .navSwitch::before,
+  .navSwitch::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-top: 5px;
+    background: var(--navbar-font-color);
+    position: relative;
+    transition: .3s;
+  }
+
+  @media (max-width: 1070px) {
+    .navbar ul li {
+      font-size: .8rem;
+    }
+
+    .navbar h1 {
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .navbar ul li {
+      margin-right: 0;
+    }
+    .navSwitch {
+      display: block;
+      z-index: 1;
+    }
+
+    .navList {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--navbar-color);
+      clip-path: circle(100px at 90% -15%);
+      transition: .9s ease-out;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      gap: 0;
+      pointer-events: none;
+    }
+
+    .navList li a {
+      font-size: 20px;
+      opacity: 0;
+    }
+
+    .navList li:nth-child(6) {
+      opacity: 0;
+    }
+
+    .navList li:nth-child(1) a {
+      transition: opacity .5s .15s;
+    }
+
+    .navList li:nth-child(2) a {
+      transition: opacity .5s .25s;
+    }
+
+    .navList li:nth-child(3) a {
+      transition: opacity .5s .35s;
+    }
+
+    .navList li:nth-child(4) a {
+      transition: opacity .5s .45s;
+    }
+
+    .navList li:nth-child(5) a {
+      transition: opacity .5s .55s;
+    }
+
+    .navList li:nth-child(6) {
+      transition: opacity .5s .65s;
+    }
+
+    .navbar.active .navList {
+      clip-path: circle(1500px at 90% -15%);
+      pointer-events: all;
+    }
+
+    .navbar.active .navList li a {
+      opacity: 1;
+    }
+
+    .navbar.active .navList li:nth-child(6) {
+      opacity: 1;
+    }
+
+    .navbar.active .navSwitch {
+      position: fixed;
+      top: 26px;
+      right: 16px;
+      border-top-color: transparent;
+    }
+
+    .navbar.active .navSwitch::before {
+      transform: rotate(135deg);
+    }
+
+    .navbar.active .navSwitch::after {
+      transform: rotate(-135deg);
+      top: -8px;
+    }
+  }
+
   
