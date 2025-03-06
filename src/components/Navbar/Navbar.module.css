@@ -43,7 +43,7 @@
   
   .navbar ul li:hover,
   span {
-    color: var(--hover) !important;
+    color: var(--hover);
   }
 
   .navbar ul li:hover {

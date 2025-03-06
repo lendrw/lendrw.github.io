@@ -25,45 +25,48 @@ const Projects = () => {
           </div>
         </div>
         <div className={styles.projectCard}>
-          <a href="https://lendrw.github.io/secret_word">
+          <div className={styles.soon}>
             <img src={secretWord} alt=""/>
-          </a>
-          <h2>Secret Word</h2>
-          <p>Jogo de palavras</p>
-          <span>Tecnologias utilizadas no projeto: HTML, CSS, JavaScript, React + Vite.</span>
+            <h2>Em Breve</h2>
+          </div>
+          <h2>...</h2>
+          <p>...</p>
+          <span>...</span>
           <div className={styles.linkButton}>
-            <a href="https://lendrw.github.io/secret_word">
+            <p>
               <FaLink/>
               Visualizar
-            </a>
+            </p>
           </div>
         </div>
         <div className={styles.projectCard}>
-          <a href="https://lendrw.github.io/secret_word">
+          <div className={styles.soon}>
             <img src={secretWord} alt=""/>
-          </a>
-          <h2>Secret Word</h2>
-          <p>Jogo de palavras</p>
-          <span>Tecnologias utilizadas no projeto: HTML, CSS, JavaScript, React + Vite.</span>
+            <h2>Em Breve</h2>
+          </div>
+          <h2>...</h2>
+          <p>...</p>
+          <span>...</span>
           <div className={styles.linkButton}>
-            <a href="https://lendrw.github.io/secret_word">
+            <p>
               <FaLink/>
               Visualizar
-            </a>
+            </p>
           </div>
         </div>
         <div className={styles.projectCard}>
-          <a href="https://lendrw.github.io/secret_word">
+          <div className={styles.soon}>
             <img src={secretWord} alt=""/>
-          </a>
-          <h2>Secret Word</h2>
-          <p>Jogo de palavras</p>
-          <span>Tecnologias utilizadas no projeto: HTML, CSS, JavaScript, React + Vite.</span>
+            <h2>Em Breve</h2>
+          </div>
+          <h2>...</h2>
+          <p>...</p>
+          <span>...</span>
           <div className={styles.linkButton}>
-            <a href="https://lendrw.github.io/secret_word">
+            <p>
               <FaLink/>
               Visualizar
-            </a>
+            </p>
           </div>
         </div>
       </AnimatedSection>

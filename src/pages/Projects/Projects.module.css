@@ -11,8 +11,32 @@
   transition: transform 0.3s ease-in-out;
 }
 
-span {
-  color: var(--button-hover-border-color);
+.soon img {
+  opacity: 0;
+}
+
+.soon {
+  background-color: var(--background-color-dark-transparent);
+  border-left: 5px solid var(--button-hover-border-color);
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+.soon:hover {
+  transform: scale(1.1);
+}
+
+.soon h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: var(--font-color);
+}
+
+.projectCard span {
+  color: var(--span-color);
 }
 
 .projects img:hover {
@@ -64,6 +88,11 @@ h1, h2, p {
     border: 2px solid var(--button-hover-border-color);
     transform: scale(1.1);
     background-color: var(--font-color);
+    color: var(--button-hover-color);
+  }
+
+  .linkButton:hover p {
+    transform: scale(1.1);
     color: var(--button-hover-color);
   }
 
