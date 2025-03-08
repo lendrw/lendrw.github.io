@@ -25,7 +25,7 @@ const AnimatedSection = ({ id, children, className }) => {
       if (isVisible) {
         controls.start({ opacity: 1, x: 0 });
       } else {
-        controls.start({ opacity: 0, x: -100 });
+        controls.start({ opacity: 0, x: -200 });
       }
     };
 
@@ -41,9 +41,9 @@ const AnimatedSection = ({ id, children, className }) => {
   return (
     <div id={id} className={className}>
       <motion.div
-        initial={{ opacity: 0, x: isMobile ? 0 : -100 }} 
+        initial={{ opacity: 0, x: isMobile ? 0 : -200 }} 
         animate={controls}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.7 }}
       >
         {children}
       </motion.div>
