@@ -54,56 +54,6 @@ const StarrySky = () => {
 
     }
 
-    for (let i = 0; i < 25; i++) {
-
-      newStars.push({
-        className: 'star star-0 blink',
-        top: getRandomInt(0, 50),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(2, 9),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
-
-      newStars.push({
-        className: 'star star-1 blink',
-        top: getRandomInt(0, 40),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(2, 5),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-        boxShadow: `0px 0px 6px 1px ${nightsky[Math.floor(getRandomInt(0, nightsky.length))]}`,
-      });
-
-      newStars.push({
-        className: 'star star-2 blink',
-        top: getRandomInt(10, 70),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(4, 8),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
-
-    }
-
-    for (let i = 0; i < 20; i++) {
-
-      newStars.push({
-        className: 'star star-0',
-        top: getRandomInt(40, 75),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(2, 9),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
-
-      newStars.push({
-        className: 'star star-1 blink',
-        top: getRandomInt(40, 75),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(2, 5),
-        boxShadow: `0px 0px 6px 1px ${nightsky[Math.floor(getRandomInt(0, nightsky.length))]}`,
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
-
-    }
-
     for (let i = 0; i < 18; i++) {
 
       newStars.push({

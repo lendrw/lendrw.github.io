@@ -92,7 +92,9 @@
 
 @media (max-width: 440px) {
     .contatoContainer {
-        grid-template-columns: 100%;
+        grid-template-columns: 60%;
         grid-template-rows: 9em 9em 9em 9em;
+        align-items: center;
+        justify-content: center;
     }
 }

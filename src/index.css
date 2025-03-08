@@ -191,6 +191,7 @@ a {
   border-radius: 100px;
   background-color: white;
   opacity: 0.8;
+  will-change: transform, opacity;
 }
 
 .blink {
