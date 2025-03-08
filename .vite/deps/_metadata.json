@@ -2,7 +2,45 @@
   "hash": "04e9f739",
   "configHash": "31f9d41a",
   "lockfileHash": "c8459eb0",
-  "browserHash": "389d0c00",
-  "optimized": {},
-  "chunks": {}
+  "browserHash": "8d786292",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "d006302a",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "8d501efd",
+      "needsInterop": true
+    },
+    "react-icons/fa": {
+      "src": "../../node_modules/react-icons/fa/index.mjs",
+      "file": "react-icons_fa.js",
+      "fileHash": "2704993f",
+      "needsInterop": false
+    },
+    "react-icons/ri": {
+      "src": "../../node_modules/react-icons/ri/index.mjs",
+      "file": "react-icons_ri.js",
+      "fileHash": "859c1293",
+      "needsInterop": false
+    },
+    "framer-motion": {
+      "src": "../../node_modules/framer-motion/dist/es/index.mjs",
+      "file": "framer-motion.js",
+      "fileHash": "e6546256",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-S3FHQ2UW": {
+      "file": "chunk-S3FHQ2UW.js"
+    },
+    "chunk-N3BBKUNS": {
+      "file": "chunk-N3BBKUNS.js"
+    }
+  }
 }

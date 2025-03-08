@@ -3,11 +3,12 @@ import styles from './LightDark.module.css';
 
 const LightDark = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark' || 
-           (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    return localStorage.getItem('theme') === 'dark';
   });
 
   const checkAutoDarkMode = () => {
+    if (localStorage.getItem('theme')) return;
+
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
@@ -20,13 +21,11 @@ const LightDark = () => {
   };
 
   useEffect(() => {
-    checkAutoDarkMode();
-
-    const interval = setInterval(() => {
+    if (!localStorage.getItem('theme')) {
       checkAutoDarkMode();
-    }, 5 * 60 * 1000);
-
-    return () => clearInterval(interval);
+      const interval = setInterval(checkAutoDarkMode, 5 * 60 * 1000);
+      return () => clearInterval(interval);
+    }
   }, []);
 
   useEffect(() => {
@@ -41,6 +40,7 @@ const LightDark = () => {
 
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);
+    localStorage.setItem('theme', !isDarkMode ? 'dark' : 'light');
   };
 
   return (
@@ -55,32 +55,32 @@ const LightDark = () => {
         <div className={styles.toggle_button}></div>
         {isDarkMode && (
           <div className={styles.stars}>
-          {Array.from({ length: 80 }).map((_, index) => {
-            const size = Math.random() * 0.8 + 0.5;
-            const top = Math.random() * 100;
-            const left = Math.random() * 100;
-            const delay = Math.random() * 10;
-            const opacity = Math.random() * 0.8 + 0.2;
-            const colors = ["#ff7ab6", "#c8ff01", "#BE6590", "#FFC1A0", "#FE9C7F", "#0aace3"];
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const isBlurred = Math.random() < 0.5;
+            {Array.from({ length: 80 }).map((_, index) => {
+              const size = Math.random() * 0.8 + 0.5;
+              const top = Math.random() * 100;
+              const left = Math.random() * 100;
+              const delay = Math.random() * 10;
+              const opacity = Math.random() * 0.8 + 0.2;
+              const colors = ["#ff7ab6", "#c8ff01", "#BE6590", "#FFC1A0", "#FE9C7F", "#0aace3"];
+              const color = colors[Math.floor(Math.random() * colors.length)];
+              const isBlurred = Math.random() < 0.5;
 
-            return (
-              <div
-                key={index}
-                className={`${styles.star} ${styles.blink} ${isBlurred ? styles.blurred : ""}`}
-                style={{
-                  width: `${size}px`,
-                  height: `${size}px`,
-                  top: `${top}%`,
-                  left: `${left}%`,
-                  opacity: `${opacity}`,
-                  backgroundColor: color,
-                  animationDuration: `${delay + 1}s`,
-                  animationDelay: `${delay}s`
-                }}
-              ></div>
-            );
+              return (
+                <div
+                  key={index}
+                  className={`${styles.star} ${styles.blink} ${isBlurred ? styles.blurred : ""}`}
+                  style={{
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    top: `${top}%`,
+                    left: `${left}%`,
+                    opacity: `${opacity}`,
+                    backgroundColor: color,
+                    animationDuration: `${delay + 1}s`,
+                    animationDelay: `${delay}s`
+                  }}
+                ></div>
+              );
             })}
           </div>
         )}
