@@ -17,9 +17,9 @@
   }
   
   .animatedSection > div p {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--font-color);
-    width: 60%;
+    width: 50%;
     text-align: justify;
   }
   

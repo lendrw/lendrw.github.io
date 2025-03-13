@@ -1,6 +1,7 @@
 import styles from './Projects.module.css';
 import AnimatedSection from '../../components/AnimatedSection/AnimatedSection';
 import secretWord from '../../assets/img/secret_word.png';
+import pokedex from '../../assets/img/pokedex.png';
 import { FaLink } from 'react-icons/fa';
 
 const Projects = () => {
@@ -25,18 +26,17 @@ const Projects = () => {
           </div>
         </div>
         <div className={styles.projectCard}>
-          <div className={styles.soon}>
-            <img src={secretWord} alt=""/>
-            <h2>Em Breve</h2>
-          </div>
-          <h2>...</h2>
-          <p>...</p>
-          <span>...</span>
+          <a href="https://lendrw.github.io/Pokedex">
+            <img src={pokedex} alt=""/>
+          </a>
+          <h2>Pokédex</h2>
+          <p>Uma Pokédex feita por meio do consumo da PokéAPI, uma API especializada em dados sobre o universo de Pokémon</p>
+          <span>Tecnologias utilizadas no projeto: HTML, CSS, JavaScript, Axios, React + Vite.</span>
           <div className={styles.linkButton}>
-            <p>
+            <a href="https://lendrw.github.io/Pokedex">
               <FaLink/>
               Visualizar
-            </p>
+            </a>
           </div>
         </div>
         <div className={styles.projectCard}>
