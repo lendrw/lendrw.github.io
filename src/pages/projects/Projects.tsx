@@ -5,7 +5,7 @@ import { PageLayout } from "../../shared/layouts"
 export const Projects: React.FC = () => {
 
     return (
-        <PageLayout title="Projetos">
+        <PageLayout id="projects" title="Projetos">
             <Box>
 
             </Box>

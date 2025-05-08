@@ -1,0 +1,147 @@
+.toggle_checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.toggle_slot {
+    position: relative;
+    height: 2.5em;
+    width: 5em;
+    border: 3px solid #e4e7ec;
+    border-radius: 10em;
+    background-color: #0aace3;
+    transition: background-color 250ms ease-in-out;
+    overflow: hidden;
+}
+
+.toggle_slot::before {
+    content: '';
+    position: absolute;
+    top: 1.1em;
+    left: 0.5em;
+    width: 2em;
+    height: 1.5em;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 
+        1.5em 0.5em 0 0.5em white,
+        0.5em 1.5em 0 0.5em white;
+    opacity: 0.7; 
+    animation: moveCloud 14s linear infinite; 
+    z-index: 3; 
+    pointer-events: none;
+}
+
+.toggle_slot::after {
+    content: '';
+    position: absolute;
+    top: -1em;
+    left: 2em;
+    width: 2em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 
+        1em 0.5em 0 0.5em white, 
+        0.5em 1.1em 0 0.1em white; 
+    opacity: 0.7; 
+    animation: moveCloud 9s linear infinite;
+    z-index: 1;
+    pointer-events: none; 
+    z-index: 3;
+}
+
+@keyframes moveCloud {
+0% {
+    transform: translateX(-340%);
+}
+100% {
+    transform: translateX(300%);
+}
+}
+
+.toggle_checkbox:checked ~ .toggle_slot {
+    background-color: #00014d;
+}
+
+.toggle_button {
+    transform: translate(2.9em, 0.4em);
+    position: absolute;
+    height: 1.6em;
+    width: 1.6em;
+    border-radius: 50%;
+    background-color: #ffdca8;
+    box-shadow: 0px 0px 20px var(--white);
+    transition: background-color 250ms, box-shadow 250ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+    z-index: 2;
+}
+
+.toggle_checkbox:checked ~ .toggle_slot .toggle_button {
+    background-color: #d6d6d6;
+    box-shadow: none;
+    transform: translate(0.4em, 0.4em);
+    box-shadow: 0px 0px 20px #e4e7ec;
+    background-image: 
+        radial-gradient(circle at 15% 25%, rgba(0, 0, 0, 0.1) 6%, transparent 12%),
+        radial-gradient(circle at 30% 60%, rgba(0, 0, 0, 0.1) 7%, transparent 14%),
+        radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.1) 5%, transparent 10%),
+        radial-gradient(circle at 65% 70%, rgba(0, 0, 0, 0.1) 8%, transparent 16%),
+        radial-gradient(circle at 80% 40%, rgba(0, 0, 0, 0.1) 6%, transparent 12%),
+        radial-gradient(circle at 85% 75%, rgba(0, 0, 0, 0.1) 5%, transparent 10%);
+}
+
+.toggle_checkbox:checked ~ .toggle_slot .sun_icon_wrapper {
+    opacity: 0;
+    transform: translate(0.75em, 0.5em) rotate(0deg);
+}
+
+.toggle_checkbox:checked ~ .toggle_slot .moon_icon_wrapper {
+    opacity: 1;
+    transform: translate(3em, 0.5em) rotate(-15deg);
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.blurred {
+    filter: blur(3px);
+    box-shadow: 0px 0px 5px 1px pink;
+}
+
+.blink {
+    animation: blink ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 1070px) {
+    .toggle_slot {
+        border: 2px solid #e4e7ec;
+    }
+}

@@ -1,38 +1,73 @@
-import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { MenuItem } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import Switch from '@mui/material/Switch';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
+import { Link } from 'react-scroll';
+import StyledThemeButton from './StyledThemeButton';
+
+const sections = [
+  { id: 'home', label: 'Início' },
+  { id: 'about', label: 'Sobre' },
+  { id: 'skills', label: 'Habilidades' },
+  { id: 'projects', label: 'Projetos' },
+  { id: 'contact', label: 'Contato' },
+];
 
 export default function Navbar() {
+  const [offset, setOffset] = useState(-64);
+
+  useEffect(() => {
+    function updateOffset() {
+      const marginTop = parseFloat(getComputedStyle(document.body).marginTop) || 0;
+      setOffset(-marginTop);
+    }
+
+    updateOffset();
+
+    window.addEventListener('resize', updateOffset);
+    return () => window.removeEventListener('resize', updateOffset);
+  }, []);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
+    <AppBar position="fixed">
+      <Toolbar>
+      <Typography variant="h6" fontWeight={600} component="div" sx={{ flexGrow: 1 }}>
+          <Link 
+            to="home" 
+            spy 
+            smooth 
+            offset={offset} 
+            duration={500}
+            style={{ cursor: 'pointer', textDecoration: 'none', color: 'inherit' }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {'<LF/>'}
-          </Typography>
-        </Toolbar>
-      </AppBar>
-    </Box>
+          </Link>
+        </Typography>
+        <Box display="flex">
+            {sections.map(({ id, label }) => (
+                <MenuItem
+                  key={id}
+                  component={Link}
+                  to={id}
+                  spy
+                  smooth
+                  offset={offset}
+                  duration={500}
+                >
+                  {label}
+                </MenuItem>
+            ))}
+          <MenuItem sx={{
+            '&:hover': {
+              backgroundColor: 'transparent', 
+            },
+          }}>
+            <StyledThemeButton/>
+          </MenuItem>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }

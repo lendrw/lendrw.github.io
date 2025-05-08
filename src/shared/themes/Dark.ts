@@ -20,12 +20,14 @@ export const DarkTheme = createTheme({
 
         background: {
             paper: '#303134',
-            default: '#202124',
+            default: '#20212',
         },
     },
     typography: {
         allVariants: {
             color: 'white',
-        }
+        },
+        
+        fontFamily: "'Atkinson Hyperlegible Mono', monospace",
     },
-});
+}); 

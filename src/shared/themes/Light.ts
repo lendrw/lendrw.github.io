@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { cyan, yellow } from "@mui/material/colors";
+import { yellow } from "@mui/material/colors";
 
 export const LightTheme = createTheme({
     palette: {
@@ -10,16 +10,36 @@ export const LightTheme = createTheme({
             contrastText: '#ffffff',
         },
 
-        secondary: {
-            main: cyan[500],
-            dark: cyan[400],
-            light: cyan[300],
-            contrastText: '#ffffff',
+        background: {
+            paper: 'rgba(255, 255, 255, 0.596)',
+            default: '#f7f6f3',
+        },
+    },
+
+    typography: {
+        fontFamily: "'Atkinson Hyperlegible Mono', monospace",
+      },
+
+      components: {
+        MuiPaper: {
+            styleOverrides: {
+                root: {
+                    color: '#000', 
+                },
+            },
         },
 
-        background: {
-            paper: '#ffffff',
-            default: '#f7f6f3',
-        }
-    }
-});
+        MuiMenuItem: {
+            styleOverrides: {
+              root: {
+                borderRadius: 19, 
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  borderRadius: 19, 
+                  backgroundColor: yellow[600], 
+                },
+              },
+            },
+          },
+        },
+      });
