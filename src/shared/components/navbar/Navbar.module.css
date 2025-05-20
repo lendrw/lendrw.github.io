@@ -1,0 +1,127 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--navbar-color);
+    color: white; 
+    height: var(--nav-height);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    width: 100vw;
+    color: var(--navbar-font-color);
+    border-bottom: 2px solid var(--hover);
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .navbar h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    font-weight: bold;
+    color: var(--navbar-font-color);
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+  .navbar ul li {
+    margin-right: 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar ul li:hover,
+  span {
+    color: var(--hover);
+  }
+
+  .navbar ul li:hover {
+    font-weight: bolder; 
+    text-shadow: 0px 0px 8px var(--hover);
+  }
+  
+  .navSwitch {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-top: 3px solid white;
+    width: 30px;
+    margin-left: auto;
+    margin-right: 1.5rem;
+  }
+
+  .navSwitch.active {
+    position: absolute;
+    left: 90dvw;
+    bottom: 72dvh;
+  }
+
+  .navSwitch::before,
+  .navSwitch::after {
+    content: " ";
+    display: block;
+    width: 30px;
+    height: 3px;
+    margin-top: 5px;
+    background: white;
+    position: relative;
+    transition: .3s;
+  }
+
+  @media (max-width: 900px) {
+  
+   
+
+    .navList {
+      clip-path: circle(100px at 90% -15%);
+      transition: .7s ease-out;
+    }
+
+    .navList a {
+      opacity: 0;
+    }
+
+    .navList > div > :nth-child(6) > * {
+      opacity: 0;
+      transition: opacity .5s .15s;
+    }
+
+    .navList.active > div > :nth-child(6) > * {
+      opacity: 1;
+    }
+
+    .navList.active {
+      clip-path: circle(1500px at 90% -15%);
+      pointer-events: all;
+    }
+
+    .navSwitch.active {
+      position: fixed;
+      top: 26px;
+      right: 16px;
+      border-top-color: transparent;
+    }
+
+    .navSwitch.active::before {
+      transform: rotate(135deg);
+    }
+
+    .navSwitch.active::after {
+      transform: rotate(-135deg);
+      top: -8px;
+    }
+  }
+
+  

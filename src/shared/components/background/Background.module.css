@@ -1,13 +1,14 @@
 .starry_sky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -1;
-  }
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+
 .sky {
   overflow: hidden;
   height: 100vh;
@@ -114,39 +115,39 @@
   }
 }
 
-.star0 {
+.star_0 {
   height: 0.5px;
   width: 0.5px;
 }
 
-.star1 {
+.star_1 {
   height: 1px;
   width: 1px;
 }
 
-.star2 {
+.star_2 {
   height: 1.5px;
   width: 1.5px;
 }
 
-.star3 {
+.star_3 {
   height: 2px;
   width: 2px;
 }
 
-.star4 {
+.star_4 {
   height: 1.5px;
   width: 1.5px;
   box-shadow: 0px 0px 6px 1px rgba(255,255,255,0.5);
 }
 
-.star5 {
+.star_5 {
   height: 2.5px;
   width: 2.5px;
   box-shadow: 0px 0px 6px 1px rgba(255,255,255,0.7);
 }
 
-.starsCross {
+.stars_cross {
   position: absolute;
   top: 10vh;
   left: 0px;
@@ -156,7 +157,7 @@
   transform-origin: top left;
 }
 
-.starsCrossAux {
+.stars_cross_aux {
   position: absolute;
   top: 0vh;
   left: 10vw;
@@ -166,8 +167,8 @@
   transform-origin: top left;
 }
 
-.starsCross > .blur,
-.starsCrossAux > .blur {
+.stars_cross > .blur,
+.stars_cross-aux > .blur {
   position: absolute;
   border-radius: 50%;
   background-color: rgb(255, 255, 255);

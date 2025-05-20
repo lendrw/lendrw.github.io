@@ -17,11 +17,11 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({ id, children, title, ba
     return (
         <Box
           id={id}
-          height={{ xs: 'calc(100vh - 56px)', sm: 'calc(100vh - 64px)' }}
+          minHeight={{ xs: 'calc(100vh - 56px)', sm: 'calc(100vh - 64px)' }}
           display="flex"
           flexDirection="column"
           gap={1}
-          position="relative" // IMPORTANTE
+          position="relative" 
           sx={{
             backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
             backgroundSize: 'cover',
@@ -37,7 +37,10 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({ id, children, title, ba
                 left={0}
                 right={0}
                 bottom={0}
-                bgcolor="rgba(255, 255, 255, 0.4)" 
+                bgcolor={theme.palette.mode === 'dark' 
+                  ? 'rgba(32, 18, 94, 0.5)'  
+                  : 'rgba(255, 233, 159, 0.5)' 
+                } 
                 zIndex={1}
             />
           )}
@@ -60,6 +63,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({ id, children, title, ba
                 alignItems="center"
                 justifyContent="center"
                 gap={1}
+                marginBottom={2}
               >
                 <Typography
                   variant={smDown ? "h5" : mdDown ? "h4" : "h3"}
