@@ -7,7 +7,7 @@ interface Card {
     icon: ReactNode;
 }
 
-export const SkillCard: React.FC<Card> = ({ title, icon }) => {
+export const ContactCard: React.FC<Card> = ({ title, icon }) => {
 
     return(
         <Box 
@@ -25,8 +25,8 @@ export const SkillCard: React.FC<Card> = ({ title, icon }) => {
                     borderBottom: (theme) => `3px solid ${theme.palette.secondary.dark}`, 
                     transform: 'scale(1.1)', 
                 },
-                width: { xs: '9em', md: '11em', lg: '11em' },
-                height: { xs: '9em', md: '11em', lg: '11em' }
+                width: { xs: '15em', sm: '16em', md: '20em', lg: '20em' },
+                height: { xs: '8em', sm: '9em', md: '11em', lg: '11em' }
               }}
         >
             <Box 
@@ -35,7 +35,7 @@ export const SkillCard: React.FC<Card> = ({ title, icon }) => {
             </Box>
             <Box>
                 <Typography 
-                    sx={{ fontSize: { xs: 13, sm: 14, md: 16 }, maxWidth: '95%' }} 
+                    sx={{ fontSize: { xs: 13, sm: 14, md: 16 } }} 
                     textAlign="center">
                         {title}
                 </Typography>

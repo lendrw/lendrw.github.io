@@ -30,18 +30,20 @@ export const Skills: React.FC = () => {
         >
             <Grid container spacing={4} sx={{
                     width: {
-                        xs: '90%',  
-                        sm: '80%',  
-                        md: '80%',   
-                        },
+                        xs: '21em',  
+                        sm: '33em',  
+                        md: '52em',
+                        lg: '55em'
+                    },
+                    justifyContent: 'center'
                 }}>
             {icons.map((icon, index) => (
                 <Grid 
                     key={index} 
-                    size={{ xs: 6, sm: 4, md: 4, lg: 3, xl: 2 }} 
+                    size={{ xs: 6, sm: 4, md: 3, lg: 3 }} 
                     display="flex" 
                     justifyContent="center">
-                <SkillCard title={icon.title} icon={icon.component} />
+                    <SkillCard title={icon.title} icon={icon.component} />
                 </Grid>
             ))}
             </Grid>
