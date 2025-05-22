@@ -42,8 +42,9 @@ export default function Navbar() {
 
   return (
     <AppBar 
+      className={mdDown && !active ? `${styles.navbar}` : `${styles.navbar} ${styles.active}`}
       position="fixed" 
-      sx={{ display: 'flex', flexDirection: 'row', height: navHeight }}
+      sx={{ flexDirection: 'row', height: navHeight }}
       >
         <Typography variant="h6" fontWeight={600} component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
             <Link 
@@ -59,21 +60,14 @@ export default function Navbar() {
             </Link>
           </Typography>
         <Toolbar 
-          className={mdDown && !active ? `${styles.navList}` : `${styles.navList} ${styles.active}`}
-          sx={ 
-              mdDown && active ? { 
-                                    height: '100dvh', 
-                                    position: 'absolute',
-                                    justifyContent: 'center',
-                                    right: '0',
-                                    left: '0',
-                                  } : {} 
-            }>
           
-          <Box sx={
-            mdDown && active ? {display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2} 
-            : mdDown && !active ? {opacity: '0'} 
-            : {display: 'flex'}}>
+        >
+          <Box 
+            className={mdDown && !active ? `${styles.navList}` : `${styles.navList} ${styles.active}`}
+            sx={(theme) => ({
+              background: theme.palette.primary.main
+            })}
+          >
               {sections.map(({ id, label }) => (
                   <MenuItem
                     key={id}
@@ -88,23 +82,22 @@ export default function Navbar() {
                     {label}
                   </MenuItem>
               ))}
-            <MenuItem
-              disableRipple
-              sx={{
-                
-                '&:hover': {
-                  backgroundColor: 'transparent',
-                },
-              }}
-            >
-            <StyledThemeButton />
-          </MenuItem>
+              <MenuItem
+                disableRipple
+                sx={{
+                  
+                  '&:hover': {
+                    backgroundColor: 'transparent',
+                  },
+                }}
+              >
+              <StyledThemeButton />
+            </MenuItem>
           </Box>
           <Box 
               component="div" 
               className={mdDown && active ? `${styles.navSwitch} ${styles.active}` : `${styles.navSwitch}`} 
               onClick={toggleNavbar}
-              display={mdDown ? 'block' : 'none'}
             >
           </Box>
       </Toolbar>

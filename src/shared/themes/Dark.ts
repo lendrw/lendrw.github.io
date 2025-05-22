@@ -5,7 +5,7 @@ export const DarkTheme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: deepPurple[700],
+            main: 'rgb(22, 15, 68)',
             dark: deepPurple[800],
             light: deepPurple[500],
             contrastText: '#ffffff',
