@@ -11,25 +11,29 @@ export const Projects: React.FC = () => {
             title: "MovieInfo", 
             image: movieinfo, 
             description: "Um site de filmes, feito consumindo a API TMDB.",
-            technologies: "Material UI, JavaScript, TypeScript, Axios, React + Vite."
+            technologies: "Material UI, JavaScript, TypeScript, Axios, React + Vite.",
+            link: "https://lendrw.github.io/movieinfo",
         },
         {
-            title: "MovieInfo", 
-            image: movieinfo, 
-            description: "Um site de filmes, feito consumindo a API TMDB.",
-            technologies: "Material UI, JavaScript, TypeScript, Axios, React + Vite."
+            title: "", 
+            image: "", 
+            description: "",
+            technologies: "",
+            link: "",
         },
         {
-            title: "MovieInfo", 
-            image: movieinfo, 
-            description: "Um site de filmes, feito consumindo a API TMDB.",
-            technologies: "Material UI, JavaScript, TypeScript, Axios, React + Vite."
+            title: "", 
+            image: "", 
+            description: "",
+            technologies: "",
+            link: "",
         },
         {
-            title: "MovieInfo", 
-            image: movieinfo, 
-            description: "Um site de filmes, feito consumindo a API TMDB.",
-            technologies: "Material UI, JavaScript, TypeScript, Axios, React + Vite."
+            title: "", 
+            image: "", 
+            description: "",
+            technologies: "",
+            link: "",
         },
     ]
 
@@ -45,7 +49,7 @@ export const Projects: React.FC = () => {
                             width: {
                                 xs: '31em',  
                                 sm: '43em',  
-                                md: '62em',
+                                md: '52em',
                                 lg: '65em'
                             },
                             justifyContent: 'center'
@@ -61,6 +65,7 @@ export const Projects: React.FC = () => {
                                     image={card.image} 
                                     description={card.description} 
                                     technologies={card.technologies}
+                                    link={card.link}
                                 />
                             </Grid>
                         ))}
