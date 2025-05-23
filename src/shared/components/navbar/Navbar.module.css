@@ -69,43 +69,18 @@
       height: 100dvh;
       clip-path: circle(100px at 90% -15%);
       transition: .7s ease-out;
+      display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 0;
       pointer-events: none;
+      gap: 1.5em;
     }
 
     .navList.active {
       clip-path: circle(1500px at 90% -15%);
       pointer-events: all;
     }
-
-    
-
-    .navItems:nth-child(1) {
-      transition: opacity 1s 1s;
-    }
-
-    .navItems:nth-child(2) {
-      transition: opacity .5s .15s;
-    }
-
-    .navItems:nth-child(3) {
-      transition: opacity .5s .35s;
-    }
-
-    .navItems:nth-child(4) {
-      transition: opacity .5s .45s;
-    }
-
-    .navItems:nth-child(5) {
-      transition: opacity .5s .55s;
-    }
-
-    .navItems:nth-child(6) {
-      transition: opacity .5s .65s;
-    }
-
     
 
     .navSwitch.active {
