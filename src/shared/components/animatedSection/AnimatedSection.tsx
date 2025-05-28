@@ -34,7 +34,7 @@ const AnimatedSection: React.FC<AnimatedSectionProps> = ({ id, children }) => {
       }
     };
 
-    let throttleTimer: NodeJS.Timeout;
+    let throttleTimer: ReturnType<typeof setTimeout>;
     const throttledScroll = () => {
       if (throttleTimer) clearTimeout(throttleTimer);
       throttleTimer = setTimeout(handleScroll, 100);
