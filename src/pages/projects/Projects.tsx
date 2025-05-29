@@ -47,8 +47,8 @@ export const Projects: React.FC = () => {
                 >
                     <Grid container spacing={4} sx={{
                             width: {
-                                xs: '31em',  
-                                sm: '43em',  
+                                xs: '90dvw',  
+                                sm: '30em',  
                                 md: '52em',
                                 lg: '65em'
                             },
@@ -57,7 +57,7 @@ export const Projects: React.FC = () => {
                         {cards.map((card, index) => (
                             <Grid 
                                 key={index} 
-                                size={{ xs: 6, sm: 6, md: 6, lg: 6 }} 
+                                size={{ xs: 12, sm: 12, md: 6, lg: 6 }} 
                                 display="flex" 
                                 justifyContent="center">
                                 <ProjectCard 

@@ -39,7 +39,7 @@ export const Home: React.FC = () => {
         <PageLayout id= "home" backgroundImage={background} hasBgFilter>
             <AnimatedSection id="motionHome">
                 <Box 
-                    width={{ xs: "97vw", sm: "30em", md: "35em", xl: "45em" }} 
+                    width={{ xs: "92vw", sm: "30em", md: "35em", xl: "45em" }} 
                     height={{ xs: "15em", sm: "16em", md: "20em", xl: "25em" }} 
                     component={Paper} 
                     display="flex" 
@@ -50,7 +50,7 @@ export const Home: React.FC = () => {
                     gap={2}
                 >
                     <Typography
-                        variant={smDown ? "h6" : mdDown ? "h6" : "h5"}
+                        variant={smDown ? "body1" : mdDown ? "h6" : "h5"}
                         textAlign="center"
                         >
                         Olá, forasteiro!{' '}
@@ -66,14 +66,14 @@ export const Home: React.FC = () => {
                         </Box>
                     </Typography>
                     <Typography 
-                        variant={smDown ? "h5" : mdDown ? "h5" : "h4"} 
+                        variant={smDown ? "h6" : mdDown ? "h5" : "h4"} 
                         textAlign="center" 
                         fontWeight="bold" 
                         className={styles.typing}
                     >
                         Meu nome é Leandro :)
                     </Typography>
-                    <Typography variant={smDown ? "h6" : mdDown ? "h6" : "h5"} textAlign="center">
+                    <Typography variant={smDown ? "body1" : mdDown ? "h6" : "h5"} textAlign="center">
                         Desenvolvedor Front-End
                     </Typography>
                     <Box display="flex" justifyContent="center" gap={1}>

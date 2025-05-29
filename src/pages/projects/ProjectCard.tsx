@@ -76,17 +76,19 @@ export const ProjectCard: React.FC<Card> = ({ title, image, description, technol
                     <Typography variant='h6'>
                         {title ? `${title}` : '...'}
                     </Typography>
-                    <Typography variant='body1' textAlign='justify'>
+                    <Typography variant='body1' textAlign='justify' sx={{fontSize: {xs: '', sm: ''}}}>
                         {description ? `${description}` : '...'}
                     </Typography>
-                    <Typography variant="body1" textAlign="justify">
+                    <Typography variant="body1" textAlign="justify" sx={{fontSize: {xs: '', sm: ''}}}>
                         {technologies ? (
                             <>
                             <Typography
                                 component="span"
                                 color="secondary.contrastText"
                                 fontWeight="bold"
-                                sx={{ display: 'inline' }}
+                                sx={{ display: 'inline',
+                                      fontSize: {xs: '', sm: ''}
+                                 }}
                             >
                                 Tecnologias usadas no projeto:
                             </Typography>{' '}

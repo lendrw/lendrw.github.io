@@ -17,7 +17,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({ id, children, title, ba
     return (
         <Box
           id={id}
-          minHeight={{ xs: 'calc(100vh - 56px)', sm: 'calc(100vh - 64px)' }}
+          minHeight={{ xs: 'calc(100dvh - 56px)', sm: 'calc(100dvh - 64px)' }}
           display="flex"
           flexDirection="column"
           gap={1}
@@ -39,7 +39,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({ id, children, title, ba
                 bottom={0}
                 bgcolor={theme.palette.mode === 'dark' 
                   ? 'rgba(32, 18, 94, 0.5)'  
-                  : 'rgba(255, 233, 159, 0.5)' 
+                  : 'rgba(255, 242, 198, 0.5)' 
                 } 
                 zIndex={1}
             />
