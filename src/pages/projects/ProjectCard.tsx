@@ -4,7 +4,9 @@ import {
             Card, 
             CardContent, 
             CardMedia, 
-            Typography 
+            Theme, 
+            Typography, 
+            useMediaQuery
         } from "@mui/material";
 import LinkIcon from '@mui/icons-material/Link';
 import soon from '../../assets/img/movieinfo.png'
@@ -18,6 +20,8 @@ interface Card {
 }
 
 export const ProjectCard: React.FC<Card> = ({ title, image, description, technologies, link }) => {
+    const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
+    const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
 
     return (
         <Card 
@@ -73,19 +77,19 @@ export const ProjectCard: React.FC<Card> = ({ title, image, description, technol
                     flexDirection='column'
                     gap={3}
                 >
-                    <Typography variant='h6'>
+                    <Typography variant={smDown ? "h6" : mdDown ? "h5" : "h5"}>
                         {title ? `${title}` : '...'}
                     </Typography>
-                    <Typography variant='body2' textAlign='justify'>
+                    <Typography variant={smDown ? "body2" : mdDown ? "body1" : "body1"} textAlign='justify'>
                         {description ? `${description}` : '...'}
                     </Typography>
-                    <Typography variant="body2" textAlign="justify">
+                    <Typography variant={smDown ? "body2" : mdDown ? "body1" : "body1"} textAlign="justify">
                         {technologies ? (
                             <>
                             <Typography
                                 component="span"
                                 color="secondary.contrastText"
-                                variant="body2"
+                                variant={smDown ? "body2" : mdDown ? "body1" : "body1"}
                                 fontWeight="bold"
                                 sx={{ display: 'inline'}}
                             >

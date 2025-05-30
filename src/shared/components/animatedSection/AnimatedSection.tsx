@@ -1,52 +1,41 @@
-import { motion, useAnimation, AnimationControls } from "framer-motion";
-import { useEffect, useState, ReactNode } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 interface AnimatedSectionProps {
   id: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 const AnimatedSection: React.FC<AnimatedSectionProps> = ({ id, children }) => {
-  const controls: AnimationControls = useAnimation();
-  const [isMobile, setIsMobile] = useState<boolean>(false);
+  const controls = useAnimation();
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth <= 768);
+    const element = ref.current;
+    if (!element) return;
 
-    const controlsStart = () => {
-      controls.start({ opacity: 1, x: 0 });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          controls.start({ opacity: 1, x: 0 });
+        } else {
+          controls.start({ opacity: 0, x: -200 });
+        }
+      },
+      { threshold: 0.5 } // 50% visível
+    );
+
+    observer.observe(element);
+
+    return () => {
+      if (element) observer.unobserve(element);
     };
+  }, [controls]);
 
-    controlsStart();
-
-    const handleScroll = () => {
-      const element = document.getElementById(id);
-      if (!element) return;
-
-      const rect = element.getBoundingClientRect();
-      const isVisible =
-        rect.top <= window.innerHeight / 1.5 && rect.bottom >= window.innerHeight / 1.5;
-
-      if (isVisible) {
-        controls.start({ opacity: 1, x: 0 });
-      } else {
-        controls.start({ opacity: 0, x: -200 });
-      }
-    };
-
-    let throttleTimer: ReturnType<typeof setTimeout>;
-    const throttledScroll = () => {
-      if (throttleTimer) clearTimeout(throttleTimer);
-      throttleTimer = setTimeout(handleScroll, 100);
-    };
-
-    window.addEventListener("scroll", throttledScroll);
-
-    return () => window.removeEventListener("scroll", throttledScroll);
-  }, [controls, id]);
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
 
   return (
-    <div id={id}>
+    <div id={id} ref={ref}>
       <motion.div
         initial={{ opacity: 0, x: isMobile ? 0 : -200 }}
         animate={controls}
