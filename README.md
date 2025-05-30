@@ -10,14 +10,6 @@ Este é meu portfólio pessoal desenvolvido com **React**, **TypeScript** e **Ma
 - **Framer Motion** – Biblioteca de animações para interfaces reativas
 - **Vite** – Build tool moderna e rápida
 
-## 📁 Estrutura do Projeto
-
-src/
-├── assets/ # Imagens, ícones e mídias
-├── pages/ # Seções principais (Home, Sobre, Projetos etc.)
-├── shared/ # Elementos compartilhados em toda a aplicação (themes, contexts, layouts etc.)
-└── App.tsx # Componente principal do app
-
 ## 📦 Como rodar o projeto localmente
 
 ```bash
