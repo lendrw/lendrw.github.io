@@ -27,7 +27,7 @@ const Background: React.FC = () => {
     const crossStars: Star[] = [];
     const crossAuxStars: Star[] = [];
 
-    for (let i = 0; i < 45; i++) {
+    for (let i = 0; i < 35; i++) {
       newStars.push({
         className: `${styles.star} ${styles.star_0} ${styles.blink}`,
         top: getRandomInt(0, 50),
@@ -61,7 +61,7 @@ const Background: React.FC = () => {
       });
     }
 
-    for (let i = 0; i < 18; i++) {
+    for (let i = 0; i < 15; i++) {
       newStars.push({
         className: `${styles.star} ${styles.star_5} ${styles.blink}`,
         top: getRandomInt(0, 50),
