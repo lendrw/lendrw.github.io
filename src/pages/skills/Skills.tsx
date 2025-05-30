@@ -15,7 +15,7 @@ export const Skills: React.FC = () => {
     { component: <SiTypescript />, title: "TypeScript" },
     { component: <SiMui />, title: "Material UI" },
     { component: <SiJest />, title: "Jest" },
-    { component: <FaGithub />, title: "GitHub" },
+    { component: <FaGithub />, title: "Git/GitHub" },
     { component: <FaCloud />, title: "Consumo de APIs" },
     { component: <RiEnglishInput />, title: "Inglês intermediário" },
   ];

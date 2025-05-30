@@ -21,20 +21,6 @@ export const Projects: React.FC = () => {
             technologies: "",
             link: "",
         },
-        {
-            title: "", 
-            image: "", 
-            description: "",
-            technologies: "",
-            link: "",
-        },
-        {
-            title: "", 
-            image: "", 
-            description: "",
-            technologies: "",
-            link: "",
-        },
     ]
 
     return (
