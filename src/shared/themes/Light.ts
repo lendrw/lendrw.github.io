@@ -1,12 +1,12 @@
 import { createTheme } from "@mui/material";
-import { yellow, blue, lightBlue } from "@mui/material/colors";
+import { orange, blue, lightBlue } from "@mui/material/colors";
 
 export const LightTheme = createTheme({
     palette: {
         primary: {
-            main: yellow[700],
-            dark: yellow[800],
-            light: yellow[500],
+            main: orange[600],
+            dark: orange[700],
+            light: orange[500],
             contrastText: '#ffffff',
         },
 
@@ -40,7 +40,7 @@ export const LightTheme = createTheme({
         MuiToolbar: {
             styleOverrides: {
                 root: {
-                    background: yellow[700], 
+                    background: orange[600], 
                 },
             },
         },
@@ -53,7 +53,7 @@ export const LightTheme = createTheme({
                 transition: 'all 0.3s ease',
                 '&:hover': {
                   borderRadius: 19, 
-                  backgroundColor: yellow[600], 
+                  backgroundColor: orange[400], 
                 },
               },
             },

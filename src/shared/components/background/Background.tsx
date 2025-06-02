@@ -10,157 +10,92 @@ interface Star {
   boxShadow?: string;
 }
 
-const Background: React.FC = () => {
+const nightsky = ["#280F36", "#632B6C", "#BE6590", "#FFC1A0", "#FE9C7F"];
 
-  const nightsky: string[] = ["#280F36", "#632B6C", "#BE6590", "#FFC1A0", "#FE9C7F"];
+const getRandomInt = (min: number, max: number): number =>
+  Math.random() * (max - min) + min;
 
-  const getRandomInt = (min: number, max: number): number => {
-    return Math.random() * (max - min) + min;
+const getRandomColor = () =>
+  nightsky[Math.floor(Math.random() * nightsky.length)];
+
+const createStar = (
+  classNames: string,
+  topRange: [number, number],
+  leftRange: [number, number],
+  durationRange: [number, number] | null = null,
+  withShadow = false
+): Star => {
+  const duration = durationRange ? getRandomInt(...durationRange) : null;
+  const color = getRandomColor();
+
+  return {
+    className: classNames,
+    top: getRandomInt(...topRange),
+    left: getRandomInt(...leftRange),
+    duration,
+    backgroundColor: color,
+    boxShadow: withShadow ? `0px 0px 6px 1px ${color}` : undefined,
   };
+};
 
+const Background: React.FC = () => {
   const [stars, setStars] = useState<Star[]>([]);
   const [crossStars, setCrossStars] = useState<Star[]>([]);
   const [crossAuxStars, setCrossAuxStars] = useState<Star[]>([]);
 
-  const generateStars = () => {
+  useEffect(() => {
     const newStars: Star[] = [];
-    const crossStars: Star[] = [];
-    const crossAuxStars: Star[] = [];
+    const cross: Star[] = [];
+    const crossAux: Star[] = [];
 
     for (let i = 0; i < 35; i++) {
-      newStars.push({
-        className: `${styles.star} ${styles.star_0} ${styles.blink}`,
-        top: getRandomInt(0, 50),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(10, 15),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
-
-      newStars.push({
-        className: `${styles.star} ${styles.star_1} ${styles.blink}`,
-        top: getRandomInt(0, 40),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(2, 5),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
-
-      newStars.push({
-        className: `${styles.star} ${styles.star_2} ${styles.blink}`,
-        top: getRandomInt(20, 70),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(5, 8),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
-
-      newStars.push({
-        className: `${styles.star} ${styles.star_4} ${styles.blink}`,
-        top: getRandomInt(20, 70),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(4, 10),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
+      newStars.push(
+        createStar(`${styles.star} ${styles.star_0} ${styles.blink}`, [0, 50], [0, 100], [10, 15]),
+        createStar(`${styles.star} ${styles.star_1} ${styles.blink}`, [0, 40], [0, 100], [2, 5]),
+        createStar(`${styles.star} ${styles.star_2} ${styles.blink}`, [20, 70], [0, 100], [5, 8]),
+        createStar(`${styles.star} ${styles.star_4} ${styles.blink}`, [20, 70], [0, 100], [4, 10])
+      );
     }
 
     for (let i = 0; i < 15; i++) {
-      newStars.push({
-        className: `${styles.star} ${styles.star_5} ${styles.blink}`,
-        top: getRandomInt(0, 50),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(4, 8),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
+      newStars.push(
+        createStar(`${styles.star} ${styles.star_5} ${styles.blink}`, [0, 50], [0, 100], [4, 8])
+      );
 
-      crossStars.push({
-        className: `${styles.blur}`,
-        top: getRandomInt(0, 50),
-        left: getRandomInt(0, 50),
-        duration: null,
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
+      cross.push(createStar(styles.blur, [0, 50], [0, 50]));
+      crossAux.push(createStar(styles.blur, [0, 100], [0, 100]));
 
-      crossAuxStars.push({
-        className: `${styles.blur}`,
-        top: getRandomInt(0, 100),
-        left: getRandomInt(0, 100),
-        duration: null,
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-      });
-
-      crossAuxStars.push({
-        className: `${styles.star} ${styles.star_2}`,
-        top: getRandomInt(0, 100),
-        left: getRandomInt(0, 100),
-        duration: getRandomInt(4, 10),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-        boxShadow: `0px 0px 6px 1px ${nightsky[Math.floor(getRandomInt(0, nightsky.length))]}`,
-      });
-
-      crossAuxStars.push({
-        className: `${styles.star} ${styles.star_3}`,
-        top: getRandomInt(0, 50),
-        left: getRandomInt(0, 50),
-        duration: getRandomInt(4, 10),
-        backgroundColor: nightsky[Math.floor(getRandomInt(0, nightsky.length))],
-        boxShadow: `0px 0px 6px 1px ${nightsky[Math.floor(getRandomInt(0, nightsky.length))]}`,
-      });
+      crossAux.push(
+        createStar(`${styles.star} ${styles.star_2}`, [0, 100], [0, 100], [4, 10], true),
+        createStar(`${styles.star} ${styles.star_3}`, [0, 50], [0, 50], [4, 10], true)
+      );
     }
 
     setStars(newStars);
-    setCrossStars(crossStars);
-    setCrossAuxStars(crossAuxStars);
-  };
-
-  useEffect(() => {
-    generateStars();
+    setCrossStars(cross);
+    setCrossAuxStars(crossAux);
   }, []);
+
+  const renderStars = (stars: Star[]) =>
+    stars.map((star, index) => (
+      <div
+        key={index}
+        className={star.className}
+        style={{
+          top: `${star.top}vh`,
+          left: `${star.left}vw`,
+          animationDuration: star.duration ? `${star.duration}s` : undefined,
+          backgroundColor: star.backgroundColor,
+          boxShadow: star.boxShadow,
+        }}
+      />
+    ));
 
   return (
     <div className={`${styles.sky} ${styles.starry_sky}`}>
-      <div className={`${styles.stars}`}>
-        {stars.map((star, index) => (
-          <div
-            key={index}
-            className={star.className}
-            style={{
-              top: `${star.top}vh`,
-              left: `${star.left}vw`,
-              animationDuration: star.duration ? `${star.duration}s` : undefined,
-              backgroundColor: star.backgroundColor,
-              boxShadow: star.boxShadow,
-            }}
-          ></div>
-        ))}
-      </div>
-      <div className={`${styles.stars_cross}`}>
-        {crossStars.map((crossStar, index) => (
-          <div
-            key={index}
-            className={crossStar.className}
-            style={{
-              top: `${crossStar.top}vh`,
-              left: `${crossStar.left}vw`,
-              animationDuration: crossStar.duration ? `${crossStar.duration}s` : undefined,
-              backgroundColor: crossStar.backgroundColor,
-              boxShadow: crossStar.boxShadow,
-            }}
-          ></div>
-        ))}
-      </div>
-      <div className={`${styles.stars_cross_aux}`}>
-        {crossAuxStars.map((crossAuxStar, index) => (
-          <div
-            key={index}
-            className={crossAuxStar.className}
-            style={{
-              top: `${crossAuxStar.top}vh`,
-              left: `${crossAuxStar.left}vw`,
-              animationDuration: crossAuxStar.duration ? `${crossAuxStar.duration}s` : undefined,
-              backgroundColor: crossAuxStar.backgroundColor,
-              boxShadow: crossAuxStar.boxShadow,
-            }}
-          ></div>
-        ))}
-      </div>
+      <div className={styles.stars}>{renderStars(stars)}</div>
+      <div className={styles.stars_cross}>{renderStars(crossStars)}</div>
+      <div className={styles.stars_cross_aux}>{renderStars(crossAuxStars)}</div>
     </div>
   );
 };
