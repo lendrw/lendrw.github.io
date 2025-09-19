@@ -1,19 +1,29 @@
 import { PageLayout } from "../../shared/layouts";
 import AnimatedSection from "../../shared/components/animatedSection/AnimatedSection";
 import { Box, Grid } from "@mui/material";
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaGithub, FaCloud } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaReact,
+  FaGithub,
+  FaCloud,
+} from "react-icons/fa";
 import { SiTypescript, SiMui, SiJest } from "react-icons/si";
-import { RiEnglishInput } from "react-icons/ri";
+import { RiEnglishInput, RiTailwindCssFill } from "react-icons/ri";
+import { BiMobileVibration } from "react-icons/bi";
 import { SkillCard } from "./SkillCard"; // ajuste o caminho se necessário
 
 export const Skills: React.FC = () => {
   const icons = [
     { component: <FaHtml5 />, title: "HTML" },
     { component: <FaCss3Alt />, title: "CSS" },
+    { component: <RiTailwindCssFill />, title: "Tailwind CSS" },
     { component: <FaJsSquare />, title: "JavaScript" },
     { component: <FaReact />, title: "React" },
     { component: <SiTypescript />, title: "TypeScript" },
     { component: <SiMui />, title: "Material UI" },
+    { component: <BiMobileVibration />, title: "Responsive Design" },
     { component: <SiJest />, title: "Jest" },
     { component: <FaGithub />, title: "Git/GitHub" },
     { component: <FaCloud />, title: "Consumo de APIs" },
@@ -23,30 +33,31 @@ export const Skills: React.FC = () => {
   return (
     <PageLayout id="skills" title="Minhas Habilidades">
       <AnimatedSection id="motionSkills">
-        <Box 
-            display="flex"
-            justifyContent="center"
-            padding={1}
-        >
-            <Grid container spacing={4} sx={{
-                    width: {
-                        xs: '21em',  
-                        sm: '33em',  
-                        md: '52em',
-                        lg: '55em'
-                    },
-                    justifyContent: 'center'
-                }}>
+        <Box display="flex" justifyContent="center" padding={1}>
+          <Grid
+            container
+            spacing={4}
+            sx={{
+              width: {
+                xs: "21em",
+                sm: "33em",
+                md: "52em",
+                lg: "55em",
+              },
+              justifyContent: "center",
+            }}
+          >
             {icons.map((icon, index) => (
-                <Grid 
-                    key={index} 
-                    size={{ xs: 6, sm: 4, md: 3, lg: 3 }} 
-                    display="flex" 
-                    justifyContent="center">
-                    <SkillCard title={icon.title} icon={icon.component} />
-                </Grid>
+              <Grid
+                key={index}
+                size={{ xs: 6, sm: 4, md: 3, lg: 3 }}
+                display="flex"
+                justifyContent="center"
+              >
+                <SkillCard title={icon.title} icon={icon.component} />
+              </Grid>
             ))}
-            </Grid>
+          </Grid>
         </Box>
       </AnimatedSection>
     </PageLayout>
