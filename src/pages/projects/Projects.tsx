@@ -4,6 +4,7 @@ import AnimatedSection from "../../shared/components/animatedSection/AnimatedSec
 import { ProjectCard } from "./ProjectCard";
 import movieinfo from "../../assets/img/movieinfo.png";
 import supermarket from "../../assets/img/supermarket.png";
+import calculadora from "../../assets/img/calculadora.png";
 
 export const Projects: React.FC = () => {
   const cards = [
@@ -24,6 +25,17 @@ export const Projects: React.FC = () => {
         "Tailwind CSS, TypeScript, Axios, React + Vite, MSW, DummyJSON.",
       viewLink: "https://lendrw.github.io/supermarkt",
       repositoryLink: "https://github.com/lendrw/supermarkt",
+    },
+    {
+      title: "Calculadora Dev",
+      image: calculadora,
+      description:
+        "Simulador financeiro para desenvolvedores, com cálculo de juros compostos e progressão de carreira.",
+      technologies:
+        "React Native com Expo, TypeScript, Expo Router, Reanimated.",
+      viewLink:
+        "https://calculadora-dev-ajhzbi3t5-leandros-projects-672a1260.vercel.app/",
+      repositoryLink: "https://github.com/lendrw/calculadoraDev",
     },
   ];
 

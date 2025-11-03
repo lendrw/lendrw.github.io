@@ -1,52 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import styles from './Background.module.css';
-
-interface Star {
-  className: string;
-  top: number;
-  left: number;
-  duration: number | null;
-  backgroundColor: string;
-  boxShadow?: string;
-}
 
 const nightsky = ["#280F36", "#632B6C", "#BE6590", "#FFC1A0", "#FE9C7F"];
 
-const getRandomInt = (min: number, max: number): number =>
-  Math.random() * (max - min) + min;
+const getRandomInt = (min: number, max: number) => Math.random() * (max - min) + min;
+const getRandomColor = () => nightsky[Math.floor(Math.random() * nightsky.length)];
 
-const getRandomColor = () =>
-  nightsky[Math.floor(Math.random() * nightsky.length)];
-
-const createStar = (
-  classNames: string,
-  topRange: [number, number],
-  leftRange: [number, number],
-  durationRange: [number, number] | null = null,
-  withShadow = false
-): Star => {
-  const duration = durationRange ? getRandomInt(...durationRange) : null;
+const createStar = (className: string, topRange: [number, number], leftRange: [number, number], durationRange?: [number, number], withShadow = false) => {
   const color = getRandomColor();
-
   return {
-    className: classNames,
+    className,
     top: getRandomInt(...topRange),
     left: getRandomInt(...leftRange),
-    duration,
+    duration: durationRange ? getRandomInt(...durationRange) : null,
     backgroundColor: color,
     boxShadow: withShadow ? `0px 0px 6px 1px ${color}` : undefined,
   };
 };
 
 const Background: React.FC = () => {
-  const [stars, setStars] = useState<Star[]>([]);
-  const [crossStars, setCrossStars] = useState<Star[]>([]);
-  const [crossAuxStars, setCrossAuxStars] = useState<Star[]>([]);
-
-  useEffect(() => {
-    const newStars: Star[] = [];
-    const cross: Star[] = [];
-    const crossAux: Star[] = [];
+  const { stars, crossStars, crossAuxStars } = useMemo(() => {
+    const newStars = [];
+    const cross = [];
+    const crossAux = [];
 
     for (let i = 0; i < 35; i++) {
       newStars.push(
@@ -58,25 +34,19 @@ const Background: React.FC = () => {
     }
 
     for (let i = 0; i < 15; i++) {
-      newStars.push(
-        createStar(`${styles.star} ${styles.star_5} ${styles.blink}`, [0, 50], [0, 100], [4, 8])
-      );
-
+      newStars.push(createStar(`${styles.star} ${styles.star_5} ${styles.blink}`, [0, 50], [0, 100], [4, 8]));
       cross.push(createStar(styles.blur, [0, 50], [0, 50]));
-      crossAux.push(createStar(styles.blur, [0, 100], [0, 100]));
-
       crossAux.push(
+        createStar(styles.blur, [0, 100], [0, 100]),
         createStar(`${styles.star} ${styles.star_2}`, [0, 100], [0, 100], [4, 10], true),
         createStar(`${styles.star} ${styles.star_3}`, [0, 50], [0, 50], [4, 10], true)
       );
     }
 
-    setStars(newStars);
-    setCrossStars(cross);
-    setCrossAuxStars(crossAux);
+    return { stars: newStars, crossStars: cross, crossAuxStars: crossAux };
   }, []);
 
-  const renderStars = (stars: Star[]) =>
+  const renderStars = (stars: any[]) =>
     stars.map((star, index) => (
       <div
         key={index}
@@ -100,4 +70,4 @@ const Background: React.FC = () => {
   );
 };
 
-export default Background;
+export default React.memo(Background);
