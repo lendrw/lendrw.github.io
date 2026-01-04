@@ -17,12 +17,21 @@ export const About: React.FC = () => {
             textAlign="justify"
             fontSize={{ xs: "small", sm: "medium", md: "large" }}
           >
-            Sou um desenvolvedor front-end com experiência em React.js,
-            JavaScript, TypeScript, Styled Components e consumo de APIs. Formado
-            em Sistemas de Informação pela UFERSA, tenho como objetivo
-            transmitir experiências agradáveis para os usuários. Sou um
-            profissional autodidata, estou sempre buscando melhorar minhas
-            habilidades e aprender novas tecnologias.
+            Sou desenvolvedor <strong>Full-Stack</strong>, com experiência em{" "}
+            <strong>
+              React.js, JavaScript, TypeScript, Styled Components, Node.js,
+              Docker e PostgreSQL
+            </strong>
+            , além de integração e consumo de <strong>APIs REST</strong>. Sou
+            formado em <strong>Sistemas de Informação pela UFERSA</strong> e
+            tenho como foco o desenvolvimento de{" "}
+            <strong>
+              interfaces intuitivas, performáticas e centradas na experiência do
+              usuário
+            </strong>
+            . Atuo de forma <strong>autodidata</strong>, sempre buscando evoluir
+            tecnicamente, explorar novas tecnologias e aplicar boas práticas no
+            desenvolvimento de software.
           </Typography>
         </Box>
       </AnimatedSection>
