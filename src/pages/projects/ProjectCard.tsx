@@ -9,22 +9,33 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import LinkIcon from "@mui/icons-material/Link";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaReact,
+  FaGithub,
+  FaCloud,
+  FaNodeJs,
+  FaDocker,
+} from "react-icons/fa";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import soon from "../../assets/img/movieinfo.png";
+import { ReactNode } from "react";
 
-interface Card {
+interface CardProps {
   title?: string;
   image?: string;
-  description?: string;
-  technologies?: string;
+  isApi?: boolean;
+  technologies?: ReactNode[];
   viewLink?: string;
   repositoryLink?: string;
 }
 
-export const ProjectCard: React.FC<Card> = ({
+export const ProjectCard: React.FC<CardProps> = ({
   title,
   image,
-  description,
+  isApi = false,
   technologies,
   viewLink,
   repositoryLink,
@@ -38,11 +49,15 @@ export const ProjectCard: React.FC<Card> = ({
         borderLeft: `4px solid ${theme.palette.secondary.light}`,
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
         height: "100%",
       })}
     >
+      <Typography variant={smDown ? "h6" : mdDown ? "h5" : "h5"} p={1}>
+        {title ? `${title}` : "..."}
+      </Typography>
       {image && <CardMedia component="img" image={image} title={title} />}
-      {!image && (
+      {!image && !isApi && (
         <Box position="relative">
           <CardMedia
             component="img"
@@ -71,6 +86,37 @@ export const ProjectCard: React.FC<Card> = ({
           </Box>
         </Box>
       )}
+      {isApi && (
+        <Box position="relative">
+          <CardMedia
+            component="img"
+            image={soon}
+            title={title}
+            sx={{ objectFit: "cover" }}
+          />
+
+          <Box
+            position="absolute"
+            top={0}
+            left={0}
+            width="100%"
+            height="100%"
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+            fontWeight="bold"
+            fontSize="1.5rem"
+            sx={(theme) => ({
+              background: `${theme.palette.primary.dark}`,
+              fontFamily: `${theme.typography.fontFamily}`,
+            })}
+          >
+            <Typography fontSize={80} color="white" sx={{ display: "flex" }}>
+              <FaCloud />
+            </Typography>
+          </Box>
+        </Box>
+      )}
 
       <CardContent
         sx={{
@@ -87,36 +133,26 @@ export const ProjectCard: React.FC<Card> = ({
           flexDirection="column"
           gap={3}
         >
-          <Typography variant={smDown ? "h6" : mdDown ? "h5" : "h5"}>
-            {title ? `${title}` : "..."}
-          </Typography>
-          <Typography
-            variant={smDown ? "body2" : mdDown ? "body1" : "body1"}
-            textAlign="justify"
-          >
-            {description ? `${description}` : "..."}
-          </Typography>
-          <Typography
-            variant={smDown ? "body2" : mdDown ? "body1" : "body1"}
-            textAlign="justify"
-          >
-            {technologies ? (
-              <>
-                <Typography
-                  component="span"
-                  color="secondary.contrastText"
-                  variant={smDown ? "body2" : mdDown ? "body1" : "body1"}
-                  fontWeight="bold"
-                  sx={{ display: "inline" }}
+          {technologies && technologies.length > 0 ? (
+            <Box display="flex" gap={2} flexWrap="wrap" justifyContent="center">
+              {technologies.map((tech, index) => (
+                <Box
+                  key={index}
+                  fontSize={32}
+                  color="secondary.main"
+                  display="flex"
+                  alignItems="center"
                 >
-                  Tecnologias:
-                </Typography>{" "}
-                {technologies}
-              </>
-            ) : (
-              "..."
-            )}
-          </Typography>
+                  {tech}
+                </Box>
+              ))}
+            </Box>
+          ) : (
+            <Typography variant={smDown ? "body2" : mdDown ? "body1" : "body1"}>
+              ...
+            </Typography>
+          )}
+
           <Box display="flex" gap={2}>
             <Button
               variant="contained"

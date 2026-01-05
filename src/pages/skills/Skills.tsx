@@ -14,6 +14,7 @@ import {
 import { SiTypescript, SiMui, SiJest } from "react-icons/si";
 import { RiEnglishInput, RiTailwindCssFill } from "react-icons/ri";
 import { BiMobileVibration, BiLogoPostgresql } from "react-icons/bi";
+import { TbBrandReactNative } from "react-icons/tb";
 import { SkillCard } from "./SkillCard"; // ajuste o caminho se necessário
 
 export const Skills: React.FC = () => {
@@ -23,6 +24,7 @@ export const Skills: React.FC = () => {
     { component: <RiTailwindCssFill />, title: "Tailwind CSS" },
     { component: <FaJsSquare />, title: "JavaScript" },
     { component: <FaReact />, title: "React" },
+    { component: <TbBrandReactNative />, title: "React Native" },
     { component: <SiTypescript />, title: "TypeScript" },
     { component: <SiMui />, title: "Material UI" },
     { component: <BiMobileVibration />, title: "Responsive Design" },

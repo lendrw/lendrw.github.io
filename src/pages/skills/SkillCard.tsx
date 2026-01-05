@@ -36,6 +36,7 @@ export const SkillCard: React.FC<Card> = ({ title, icon }) => {
         <Typography
           sx={{
             fontSize: { xs: 13, sm: 14, md: 14.5, lg: 15 },
+            lineHeight: 1,
             maxWidth: "95%",
           }}
           textAlign="center"

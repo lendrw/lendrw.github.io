@@ -5,37 +5,68 @@ import { ProjectCard } from "./ProjectCard";
 import movieinfo from "../../assets/img/movieinfo.png";
 import supermarket from "../../assets/img/supermarket.png";
 import calculadora from "../../assets/img/calculadora.png";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaReact,
+  FaGithub,
+  FaCloud,
+  FaNode,
+  FaDocker,
+  FaCloudflare,
+} from "react-icons/fa";
+import { SiTypescript, SiMui, SiJest } from "react-icons/si";
+import { RiEnglishInput, RiTailwindCssFill } from "react-icons/ri";
+import { BiMobileVibration, BiLogoPostgresql } from "react-icons/bi";
+import { PiFileHtmlDuotone, PiFileCssDuotone } from "react-icons/pi";
+import { TbBrandReactNative } from "react-icons/tb";
 
 export const Projects: React.FC = () => {
   const cards = [
     {
       title: "MovieInfo",
       image: movieinfo,
-      description: "Um site de filmes, feito consumindo a API TMDB.",
-      technologies: "Material UI, TypeScript, Axios, React + Vite.",
+      technologies: [
+        <PiFileHtmlDuotone />,
+        <PiFileCssDuotone />,
+        <SiMui />,
+        <FaReact />,
+        <SiTypescript />,
+      ],
       viewLink: "https://lendrw.github.io/movieinfo",
       repositoryLink: "https://github.com/lendrw/movieinfo",
     },
     {
       title: "Supermarket",
       image: supermarket,
-      description:
-        "E-commerce fictício de supermercado. Simula a listagem de produtos, carrinho de compras e consumo de API fake.",
-      technologies:
-        "Tailwind CSS, TypeScript, Axios, React + Vite, MSW, DummyJSON.",
+      technologies: [
+        <PiFileHtmlDuotone />,
+        <RiTailwindCssFill />,
+        <FaReact />,
+        <SiTypescript />,
+      ],
       viewLink: "https://lendrw.github.io/supermarkt",
       repositoryLink: "https://github.com/lendrw/supermarkt",
     },
     {
       title: "Calculadora Dev",
       image: calculadora,
-      description:
-        "Simulador financeiro para desenvolvedores, com cálculo de juros compostos e progressão de carreira.",
-      technologies:
-        "React Native com Expo, TypeScript, Expo Router, Reanimated.",
-      viewLink:
-        "https://calculadora-dev-ajhzbi3t5-leandros-projects-672a1260.vercel.app/",
+      technologies: [<TbBrandReactNative />, <SiTypescript />],
+      viewLink: "https://calculadora-dev-xbu.vercel.app",
       repositoryLink: "https://github.com/lendrw/calculadoraDev",
+    },
+    {
+      title: "API de vendas",
+      isApi: true,
+      technologies: [
+        <SiTypescript />,
+        <FaNode />,
+        <BiLogoPostgresql />,
+        <FaDocker />,
+        <FaCloudflare />,
+      ],
+      repositoryLink: "https://github.com/lendrw/API-vendas",
     },
   ];
 
@@ -66,10 +97,10 @@ export const Projects: React.FC = () => {
                 <ProjectCard
                   title={card.title}
                   image={card.image}
-                  description={card.description}
                   technologies={card.technologies}
                   viewLink={card.viewLink}
                   repositoryLink={card.repositoryLink}
+                  isApi={card.isApi}
                 />
               </Grid>
             ))}

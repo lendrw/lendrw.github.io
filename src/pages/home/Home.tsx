@@ -7,7 +7,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import HorizontalRuleIcon from "@mui/icons-material/HorizontalRule";
 import { keyframes } from "@mui/system";
-import background from "../../assets/img/dev_background.png";
 
 export const Home: React.FC = () => {
   const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down("sm"));
@@ -38,7 +37,7 @@ export const Home: React.FC = () => {
   ];
 
   return (
-    <PageLayout id="home" backgroundImage={background} hasBgFilter>
+    <PageLayout id="home">
       <AnimatedSection id="motionHome">
         <Box
           width={{ xs: "92vw", sm: "30em", md: "35em", xl: "45em" }}
