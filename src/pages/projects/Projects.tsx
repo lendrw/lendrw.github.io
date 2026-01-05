@@ -5,20 +5,10 @@ import { ProjectCard } from "./ProjectCard";
 import movieinfo from "../../assets/img/movieinfo.png";
 import supermarket from "../../assets/img/supermarket.png";
 import calculadora from "../../assets/img/calculadora.png";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
-  FaGithub,
-  FaCloud,
-  FaNode,
-  FaDocker,
-  FaCloudflare,
-} from "react-icons/fa";
-import { SiTypescript, SiMui, SiJest } from "react-icons/si";
-import { RiEnglishInput, RiTailwindCssFill } from "react-icons/ri";
-import { BiMobileVibration, BiLogoPostgresql } from "react-icons/bi";
+import { FaReact, FaNode, FaDocker, FaCloudflare } from "react-icons/fa";
+import { SiTypescript, SiMui } from "react-icons/si";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { BiLogoPostgresql } from "react-icons/bi";
 import { PiFileHtmlDuotone, PiFileCssDuotone } from "react-icons/pi";
 import { TbBrandReactNative } from "react-icons/tb";
 

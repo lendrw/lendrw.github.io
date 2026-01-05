@@ -9,16 +9,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import LinkIcon from "@mui/icons-material/Link";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
-  FaGithub,
-  FaCloud,
-  FaNodeJs,
-  FaDocker,
-} from "react-icons/fa";
+import { FaCloud } from "react-icons/fa";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import soon from "../../assets/img/movieinfo.png";
 import { ReactNode } from "react";
