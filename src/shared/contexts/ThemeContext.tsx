@@ -2,6 +2,7 @@ import React, { createContext, useCallback, useContext, useMemo, useState, React
 import { Box, ThemeProvider } from "@mui/material";
 import { DarkTheme, LightTheme } from "../themes";
 import Background from "../components/background/Background";
+import LightBackground from "../components/background/LightBackground";
 
 interface IThemeContextData {
     themeName: "light" | "dark";
@@ -34,6 +35,7 @@ export const AppThemeProvider: React.FC<IAppThemeProviderProps> = ({ children })
             <ThemeProvider theme={theme}>
                 <Box width="100%" bgcolor={theme.palette.background.default} position="relative">
                     {themeName === "dark" && <Background />}
+                    {themeName === "light" && <LightBackground />}
                     {children}
                 </Box>
             </ThemeProvider>

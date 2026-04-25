@@ -18,8 +18,8 @@ export const LightTheme = createTheme({
     },
 
     background: {
-      paper: "#ffffffc5",
-      default: "#0aade31f",
+      paper: "rgba(255, 255, 255, 0.8)",
+      default: "rgba(249, 250, 251, 0.6)",
     },
   },
 
