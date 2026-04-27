@@ -147,7 +147,6 @@ export const ProjectCard: React.FC<CardProps> = ({
           <Box display="flex" gap={2}>
             <Button
               variant="contained"
-              startIcon={<LinkIcon />}
               href={viewLink || undefined}
               disabled={!viewLink}
               sx={(theme) => ({
@@ -161,7 +160,6 @@ export const ProjectCard: React.FC<CardProps> = ({
             </Button>
             <Button
               variant="contained"
-              startIcon={<GitHubIcon />}
               href={repositoryLink || undefined}
               disabled={!repositoryLink}
               sx={(theme) => ({

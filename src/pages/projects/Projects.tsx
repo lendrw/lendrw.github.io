@@ -68,19 +68,14 @@ export const Projects: React.FC = () => {
             container
             spacing={4}
             sx={{
-              width: {
-                xs: "90dvw",
-                sm: "30em",
-                md: "52em",
-                lg: "65em",
-              },
+              width: "95dvw",
               justifyContent: "center",
             }}
           >
             {cards.map((card, index) => (
               <Grid
                 key={index}
-                size={{ xs: 12, sm: 12, md: 6, lg: 6 }}
+                size={{ xs: 12, sm: 6, md: 6, lg: 4 }}
                 display="flex"
                 justifyContent="center"
               >
