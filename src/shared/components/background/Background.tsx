@@ -8,7 +8,6 @@ const NIGHT_SKY_COLORS = [
   "#FFC1A0",
   "#FE9C7F",
 ];
-const BUBBLE_COLORS = ["#0aace3", "#1e88e5", "#fb8c00", "#ffffff"];
 
 const STAR_GROUP_COUNT = 35;
 const CROSS_STAR_COUNT = 15;
@@ -35,7 +34,7 @@ interface Bubble {
   size: number;
   duration: number;
   delay: number;
-  color: string;
+  hueRotate: number;
   opacity: number;
 }
 
@@ -67,11 +66,11 @@ const createStar = (
 const createBubble = (): Bubble => ({
   top: randomBetween(8, 92),
   left: randomBetween(-5, 98),
-  size: randomBetween(18, 120),
+  size: randomBetween(26, 132),
   duration: randomBetween(14, 32),
   delay: randomBetween(-24, 0),
-  color: randomItem(BUBBLE_COLORS),
-  opacity: randomBetween(0.14, 0.34),
+  hueRotate: randomBetween(0, 360),
+  opacity: randomBetween(0.16, 0.32),
 });
 
 function Background({ variant = "dark" }: BackgroundProps) {
@@ -163,7 +162,7 @@ function Background({ variant = "dark" }: BackgroundProps) {
               height: bubble.size,
               animationDuration: `${bubble.duration}s`,
               animationDelay: `${bubble.delay}s`,
-              backgroundColor: bubble.color,
+              filter: `hue-rotate(${bubble.hueRotate}deg) saturate(1.55)`,
               opacity: bubble.opacity,
             };
 

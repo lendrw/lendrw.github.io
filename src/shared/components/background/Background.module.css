@@ -104,13 +104,66 @@
 .bubble {
   position: absolute;
   border-radius: 50%;
-  mix-blend-mode: multiply;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background:
+    radial-gradient(
+      circle at 31% 24%,
+      rgba(255, 255, 255, 0.88) 0 8%,
+      rgba(255, 255, 255, 0.22) 9% 17%,
+      transparent 31%
+    ),
+    radial-gradient(
+      circle at 68% 72%,
+      rgba(255, 255, 255, 0.42),
+      transparent 32%
+    ),
+    conic-gradient(
+      from 32deg at 52% 48%,
+      rgba(255, 0, 150, 0.58),
+      rgba(255, 196, 0, 0.52),
+      rgba(92, 255, 0, 0.46),
+      rgba(0, 213, 255, 0.56),
+      rgba(109, 82, 255, 0.52),
+      rgba(255, 0, 180, 0.52),
+      rgba(255, 0, 150, 0.58)
+    ),
+    radial-gradient(
+      circle at 50% 52%,
+      rgba(255, 255, 255, 0.05) 0 48%,
+      rgba(255, 255, 255, 0.34) 68%,
+      rgba(255, 255, 255, 0.04) 72%
+    );
+  background-blend-mode: screen, screen, normal, screen;
   box-shadow:
-    inset -12px -14px 24px rgba(255, 255, 255, 0.46),
-    inset 10px 12px 22px rgba(10, 172, 227, 0.12),
-    0 16px 30px rgba(30, 136, 229, 0.08);
+    inset -16px -18px 26px rgba(255, 255, 255, 0.46),
+    inset 12px 14px 28px rgba(0, 213, 255, 0.16),
+    inset 0 0 18px rgba(255, 0, 180, 0.14),
+    0 18px 34px rgba(30, 136, 229, 0.1);
   animation: floatBubble ease-in-out infinite alternate;
   will-change: transform, opacity;
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: inherit;
+  background:
+    conic-gradient(
+      from 210deg,
+      transparent 0deg,
+      rgba(255, 255, 255, 0.46) 34deg,
+      rgba(0, 255, 255, 0.4) 78deg,
+      rgba(255, 235, 59, 0.38) 132deg,
+      rgba(255, 0, 170, 0.4) 188deg,
+      rgba(84, 110, 255, 0.36) 244deg,
+      transparent 320deg
+    );
+  mix-blend-mode: screen;
+  opacity: 0.8;
+  animation: shimmerBubble 8s linear infinite;
 }
 
 .bubble::after {
@@ -123,6 +176,12 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.6);
   filter: blur(1px);
+}
+
+@keyframes shimmerBubble {
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 @keyframes floatBubble {
