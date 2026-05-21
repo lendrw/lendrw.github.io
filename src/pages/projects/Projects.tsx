@@ -5,12 +5,14 @@ import { ProjectCard } from "./ProjectCard";
 import movieinfo from "../../assets/img/movieinfo.png";
 import supermarket from "../../assets/img/supermarket.png";
 import calculadora from "../../assets/img/calculadora.png";
+import kanban from "../../assets/img/kanban.png";
 import { FaReact, FaNode, FaDocker, FaCloudflare } from "react-icons/fa";
-import { SiTypescript, SiMui } from "react-icons/si";
+import { SiTypescript, SiMui, SiExpo } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { PiFileHtmlDuotone, PiFileCssDuotone } from "react-icons/pi";
 import { TbBrandReactNative } from "react-icons/tb";
+import { MdAnimation, MdStorage } from "react-icons/md";
 
 export const Projects: React.FC = () => {
   const cards = [
@@ -57,6 +59,18 @@ export const Projects: React.FC = () => {
         <FaCloudflare />,
       ],
       repositoryLink: "https://github.com/lendrw/API-vendas",
+    },
+    {
+      title: "Kanban",
+      image: kanban,
+      technologies: [
+        <SiExpo />,
+        <TbBrandReactNative />,
+        <SiTypescript />,
+        <MdAnimation />,
+        <MdStorage />,
+      ],
+      repositoryLink: "https://github.com/lendrw/kanban-mobile",
     },
   ];
 
