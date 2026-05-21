@@ -47,7 +47,19 @@ export const ProjectCard: React.FC<CardProps> = ({
       <Typography variant={smDown ? "h6" : mdDown ? "h5" : "h5"} p={1}>
         {title ? `${title}` : "..."}
       </Typography>
-      {image && <CardMedia component="img" image={image} title={title} />}
+      {image && (
+        <CardMedia
+          component="img"
+          image={image}
+          title={title}
+          sx={{
+            aspectRatio: "1350 / 650",
+            objectFit: "cover",
+            objectPosition: "center",
+            width: "100%",
+          }}
+        />
+      )}
       {!image && !isApi && (
         <Box position="relative">
           <CardMedia
